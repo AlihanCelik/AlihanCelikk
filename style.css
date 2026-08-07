@@ -257,44 +257,52 @@ body {
     justify-content: space-between;
 }
 
-.brand-logo {
+.cyber-brand {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-family: var(--font-code);
-    font-size: 1.15rem;
-    font-weight: 700;
+    gap: 0.7rem;
     text-decoration: none;
-    color: var(--text-primary);
+    white-space: nowrap;
     transition: var(--transition-fast);
 }
 
-.brand-logo:hover {
+.cyber-brand:hover {
     transform: scale(1.03);
 }
 
-.logo-icon-badge {
-    width: 34px;
-    height: 34px;
-    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.2));
+.brand-badge-icon {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.25));
     border: 1px solid var(--accent-cyan);
+    padding: 0.35rem 0.65rem;
     border-radius: 8px;
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    white-space: nowrap;
+}
+
+.brand-badge-content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    color: var(--accent-cyan);
-    font-size: 0.9rem;
-    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+    line-height: 1.2;
 }
 
-.code-bracket {
-    color: var(--accent-cyan);
-    font-weight: bold;
+.brand-title {
+    font-family: var(--font-ui);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
 }
 
-.brand-name {
-    margin: 0 2px;
-    letter-spacing: -0.5px;
+.brand-subtitle {
+    font-family: var(--font-code);
+    font-size: 0.68rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.5px;
 }
 
 .status-badge {
@@ -309,6 +317,7 @@ body {
     font-family: var(--font-code);
     color: var(--accent-green);
     box-shadow: 0 0 15px rgba(0, 255, 157, 0.1);
+    white-space: nowrap;
 }
 
 .status-badge i {
