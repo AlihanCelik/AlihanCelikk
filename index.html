@@ -240,148 +240,188 @@
             </div>
         </section>
 
-        <!-- Experience & Education Section -->
+        <!-- Experience & Education Split Dashboard -->
         <section id="experience" class="section-padding bg-alt">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">&lt;career-roadmap&gt;</span>
-                    <h2 class="section-title">Kariyer Yolculuğum & Deneyim</h2>
+                    <span class="section-subtitle">&lt;career-and-education&gt;</span>
+                    <h2 class="section-title">Deneyim & Akademik Yolculuk</h2>
                     <div class="section-line"></div>
                 </div>
 
-                <!-- Timeline Filters -->
-                <div class="timeline-filters">
-                    <button class="timeline-filter-btn active" data-tfilter="all">
-                        <i class="fa-solid fa-list-check"></i> Tüm Yolculuk
-                    </button>
-                    <button class="timeline-filter-btn" data-tfilter="work">
-                        <i class="fa-solid fa-briefcase"></i> İş & Staj
-                    </button>
-                    <button class="timeline-filter-btn" data-tfilter="edu">
-                        <i class="fa-solid fa-graduation-cap"></i> Eğitim & Liderlik
-                    </button>
-                </div>
-
-                <!-- Laser Road Map Container -->
-                <div class="cyber-roadmap">
-                    <div class="laser-track"></div>
-
-                    <!-- Orion Innovation -->
-                    <div class="roadmap-card glass-panel" data-tcat="work">
-                        <div class="roadmap-icon work-icon">
+                <!-- Dual Dashboard Grid -->
+                <div class="dual-dashboard-grid">
+                    <!-- Column 1: İş Deneyimleri -->
+                    <div class="dashboard-col">
+                        <div class="col-header-banner work-header-banner">
                             <i class="fa-solid fa-briefcase"></i>
+                            <h3>İş & Staj Deneyimleri</h3>
+                            <span class="col-count-badge">3 Pozisyon</span>
                         </div>
-                        <div class="roadmap-content">
-                            <div class="roadmap-header">
-                                <div>
-                                    <span class="roadmap-type-badge work-badge"><i class="fa-solid fa-building"></i> Staj (Internship)</span>
-                                    <h3 class="roadmap-title">Stajyer Mobil Uygulama Geliştirici</h3>
-                                    <h4 class="roadmap-company">Orion Innovation Turkey</h4>
+
+                        <div class="cards-stack">
+                            <!-- Experience 1: Orion -->
+                            <div class="career-box glass-panel work-border">
+                                <div class="career-top">
+                                    <div class="company-logo-badge orion-logo">
+                                        <i class="fa-solid fa-mobile-screen"></i>
+                                    </div>
+                                    <div class="career-head-text">
+                                        <span class="type-pill cyan-pill">Stajyer (Internship)</span>
+                                        <h4 class="career-role">Stajyer Mobil Uygulama Geliştirici</h4>
+                                        <h5 class="career-org">Orion Innovation Turkey</h5>
+                                    </div>
+                                    <span class="time-badge"><i class="fa-regular fa-calendar"></i> Temmuz 2025 – Eylül 2025</span>
                                 </div>
-                                <div class="roadmap-time"><i class="fa-regular fa-calendar"></i> Temmuz 2025 – Eylül 2025</div>
+                                <p class="career-summary">
+                                    Modern mobil uygulama mimarileri üzerine çalışmalar gerçekleştirerek kurumsal projelerin geliştirme ve kod inceleme süreçlerine aktif katılım sağladım.
+                                </p>
+                                <ul class="career-bullets">
+                                    <li><i class="fa-solid fa-circle-check"></i> Kotlin & Jetpack Compose ile modern Android mimarileri.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Kurumsal kod standartları (Clean Arch & MVVM) ve Firebase entegrasyonu.</li>
+                                </ul>
+                                <div class="career-tech-stack">
+                                    <span>Kotlin</span>
+                                    <span>Jetpack Compose</span>
+                                    <span>Firebase</span>
+                                    <span>Android Studio</span>
+                                </div>
                             </div>
-                            <p class="roadmap-desc">
-                                Modern mobil uygulama mimarileri (Jetpack Compose & Clean Arch) üzerine yoğunlaşarak kurumsal ölçekli projelerin geliştirme ve kod inceleme süreçlerine aktif katılım.
-                            </p>
-                            <div class="roadmap-highlights">
-                                <span class="highlight-chip"><i class="fa-solid fa-star"></i> Kurumsal Mobil Mimari</span>
-                                <span class="highlight-chip"><i class="fa-solid fa-check"></i> Clean Code</span>
+
+                            <!-- Experience 2: ELASOFT -->
+                            <div class="career-box glass-panel work-border">
+                                <div class="career-top">
+                                    <div class="company-logo-badge elasoft-logo">
+                                        <i class="fa-solid fa-server"></i>
+                                    </div>
+                                    <div class="career-head-text">
+                                        <span class="type-pill blue-pill">Stajyer (Internship)</span>
+                                        <h4 class="career-role">Stajyer Backend Geliştirici</h4>
+                                        <h5 class="career-org">ELASOFT</h5>
+                                    </div>
+                                    <span class="time-badge"><i class="fa-regular fa-calendar"></i> Temmuz 2024 – Ağustos 2024</span>
+                                </div>
+                                <p class="career-summary">
+                                    Web tabanlı kurumsal projelerin backend mimarilerinde servis geliştirme ve yüksek performanslı veri tabanı işlemlerinde görev aldım.
+                                </p>
+                                <ul class="career-bullets">
+                                    <li><i class="fa-solid fa-circle-check"></i> ASP.NET Core & MVC ile kurumsal mikroservis ve Web API'ler.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Dapper ORM ile yüksek hızlı veri erişim katmanları.</li>
+                                </ul>
+                                <div class="career-tech-stack">
+                                    <span>ASP.NET Core</span>
+                                    <span>ASP.NET MVC</span>
+                                    <span>C#</span>
+                                    <span>Dapper ORM</span>
+                                    <span>Web API</span>
+                                </div>
                             </div>
-                            <div class="roadmap-tech-tags">
-                                <span>Kotlin</span>
-                                <span>Jetpack Compose</span>
-                                <span>Firebase</span>
-                                <span>Android Studio</span>
+
+                            <!-- Experience 3: Freelance -->
+                            <div class="career-box glass-panel work-border">
+                                <div class="career-top">
+                                    <div class="company-logo-badge freelance-logo">
+                                        <i class="fa-solid fa-people-group"></i>
+                                    </div>
+                                    <div class="career-head-text">
+                                        <span class="type-pill purple-pill">Freelance & Ekip</span>
+                                        <h4 class="career-role">Mobil Uygulama Geliştirici</h4>
+                                        <h5 class="career-org">Ekip Çalışması & Bağımsız Projeler</h5>
+                                    </div>
+                                    <span class="time-badge"><i class="fa-regular fa-calendar"></i> 2022 – 2025</span>
+                                </div>
+                                <p class="career-summary">
+                                    Ekip arkadaşlarımla birlikte uçtan uca kullanıcı dostu mobil çözümler tasarladık ve grup içi kod incelemeleri yaparak teslim ettik.
+                                </p>
+                                <ul class="career-bullets">
+                                    <li><i class="fa-solid fa-circle-check"></i> Flutter ve Native Android ile uçtan uca uygulama geliştirme.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Git/GitHub iş akışları ve ekip içi kod inceleme disiplini.</li>
+                                </ul>
+                                <div class="career-tech-stack">
+                                    <span>Kotlin</span>
+                                    <span>Flutter</span>
+                                    <span>Git & GitHub</span>
+                                    <span>Ekip Yönetimi</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ELASOFT -->
-                    <div class="roadmap-card glass-panel" data-tcat="work">
-                        <div class="roadmap-icon work-icon">
-                            <i class="fa-solid fa-server"></i>
-                        </div>
-                        <div class="roadmap-content">
-                            <div class="roadmap-header">
-                                <div>
-                                    <span class="roadmap-type-badge work-badge"><i class="fa-solid fa-network-wired"></i> Staj (Internship)</span>
-                                    <h3 class="roadmap-title">Stajyer Backend Geliştirici</h3>
-                                    <h4 class="roadmap-company">ELASOFT</h4>
-                                </div>
-                                <div class="roadmap-time"><i class="fa-regular fa-calendar"></i> Temmuz 2024 – Ağustos 2024</div>
-                            </div>
-                            <p class="roadmap-desc">
-                                Web tabanlı kurumsal projelerin backend mimarilerinde servis geliştirme, RESTful API tasarımı ve mikroservis entegrasyonu görevlerini üstlendim.
-                            </p>
-                            <div class="roadmap-highlights">
-                                <span class="highlight-chip"><i class="fa-solid fa-database"></i> Dapper ORM Performance</span>
-                                <span class="highlight-chip"><i class="fa-solid fa-bolt"></i> High-Speed Web API</span>
-                            </div>
-                            <div class="roadmap-tech-tags">
-                                <span>ASP.NET Core</span>
-                                <span>ASP.NET MVC</span>
-                                <span>C#</span>
-                                <span>Dapper ORM</span>
-                                <span>REST Web API</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Freelance -->
-                    <div class="roadmap-card glass-panel" data-tcat="work">
-                        <div class="roadmap-icon freelance-icon">
-                            <i class="fa-solid fa-users-gear"></i>
-                        </div>
-                        <div class="roadmap-content">
-                            <div class="roadmap-header">
-                                <div>
-                                    <span class="roadmap-type-badge freelance-badge"><i class="fa-solid fa-handshake"></i> Ekip Çalışması & Freelance</span>
-                                    <h3 class="roadmap-title">Mobil Uygulama Geliştirici</h3>
-                                    <h4 class="roadmap-company">Bağımsız Ekip Projeleri</h4>
-                                </div>
-                                <div class="roadmap-time"><i class="fa-regular fa-calendar"></i> 2022 – 2025</div>
-                            </div>
-                            <p class="roadmap-desc">
-                                Ekip arkadaşlarımla birlikte uçtan uca mobil uygulama geliştirme süreçlerini yönettik. İhtiyaç odaklı ve kullanıcı dostu mobil çözümler tasarlayarak grup içi kod incelemeleri teslim ettik.
-                            </p>
-                            <div class="roadmap-highlights">
-                                <span class="highlight-chip"><i class="fa-solid fa-code-branch"></i> Git Workflow</span>
-                                <span class="highlight-chip"><i class="fa-solid fa-people-group"></i> Ekip Liderliği & İletişim</span>
-                            </div>
-                            <div class="roadmap-tech-tags">
-                                <span>Kotlin</span>
-                                <span>Flutter</span>
-                                <span>Git & GitHub</span>
-                                <span>Agile/Scrum</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- KTÜ Education -->
-                    <div class="roadmap-card glass-panel" data-tcat="edu">
-                        <div class="roadmap-icon edu-icon">
+                    <!-- Column 2: Eğitim & Akademik Başarılar -->
+                    <div class="dashboard-col">
+                        <div class="col-header-banner edu-header-banner">
                             <i class="fa-solid fa-graduation-cap"></i>
+                            <h3>Eğitim & Akademik Derece</h3>
+                            <span class="col-count-badge gold-badge">Lisans Derecesi</span>
                         </div>
-                        <div class="roadmap-content">
-                            <div class="roadmap-header">
-                                <div>
-                                    <span class="roadmap-type-badge edu-badge"><i class="fa-solid fa-award"></i> Lisans Derecesi</span>
-                                    <h3 class="roadmap-title">Bilgisayar Mühendisliği Lisans</h3>
-                                    <h4 class="roadmap-company">Karadeniz Teknik Üniversitesi (KTÜ)</h4>
+
+                        <div class="cards-stack">
+                            <!-- Education Main Card -->
+                            <div class="career-box glass-panel edu-border highlight-glow">
+                                <div class="career-top">
+                                    <div class="company-logo-badge ktu-logo">
+                                        <i class="fa-solid fa-university"></i>
+                                    </div>
+                                    <div class="career-head-text">
+                                        <span class="type-pill gold-pill">Lisans (BSc Degree)</span>
+                                        <h4 class="career-role">Bilgisayar Mühendisliği Lisans</h4>
+                                        <h5 class="career-org">Karadeniz Teknik Üniversitesi (KTÜ)</h5>
+                                    </div>
+                                    <span class="time-badge green-time"><i class="fa-regular fa-calendar"></i> 2021 – 2026</span>
                                 </div>
-                                <div class="roadmap-time"><i class="fa-regular fa-calendar"></i> 2021 – 2026</div>
-                            </div>
-                            <p class="roadmap-desc">
-                                Mühendislik prensipleri, veri yapıları, algoritmalar ve nesne yönelimli programlama disiplini ile mezun oldum. Kulüpte <strong>Mobil Uygulama Geliştirme Komitesi Başkanlığı</strong> görevinde etkinlikler ve çalıştaylar organize ettim.
-                            </p>
-                            <div class="roadmap-highlights">
-                                <span class="highlight-chip trophy"><i class="fa-solid fa-trophy"></i> GPA: 3.45 (Bölüm Dördüncüsü)</span>
-                                <span class="highlight-chip leader"><i class="fa-solid fa-crown"></i> Mobil Komitesi Başkanı</span>
-                            </div>
-                            <div class="roadmap-tech-tags">
-                                <span>Yazılım Mimarisi</span>
-                                <span>OOP & Clean Code</span>
-                                <span>Komite Liderliği</span>
+
+                                <!-- Trophy Card Highlight Banner -->
+                                <div class="academic-trophy-box">
+                                    <div class="trophy-badge-gold">
+                                        <i class="fa-solid fa-trophy trophy-sparkle"></i>
+                                        <div>
+                                            <span class="trophy-title">GPA: 3.45</span>
+                                            <span class="trophy-sub">Bölüm Dördüncüsü</span>
+                                        </div>
+                                    </div>
+                                    <div class="leader-badge-purple">
+                                        <i class="fa-solid fa-crown"></i>
+                                        <div>
+                                            <span class="trophy-title">Mobil Komite Başkanı</span>
+                                            <span class="trophy-sub">KTÜ BM Kulübü</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="career-summary">
+                                    Eğitim hayatım boyunca teorik mühendislik bilgimi pratik projelerle birleştirerek durmaksızın kendimi geliştirdim. Kulüpte komite başkanlığı üstlenerek liderlik ve organizasyon yetkinliklerimi güçlendirdim.
+                                </p>
+
+                                <div class="edu-highlights-list">
+                                    <div class="edu-item">
+                                        <i class="fa-solid fa-award edu-icon-spark"></i>
+                                        <div>
+                                            <strong>Akademik Başarı:</strong>
+                                            <span>3.45 yüksek ortalama ile Karadeniz Teknik Üniversitesi Bilgisayar Mühendisliği Bölüm Dördüncüsü olarak mezuniyet.</span>
+                                        </div>
+                                    </div>
+                                    <div class="edu-item">
+                                        <i class="fa-solid fa-users-viewfinder edu-icon-spark"></i>
+                                        <div>
+                                            <strong>Kulüp Başkanlığı:</strong>
+                                            <span>KTÜ Bilgisayar Mühendisliği Kulübü'nde Mobil Uygulama Geliştirme Komitesi Başkanlığı ile çalıştay ve etkinlik yönetimi.</span>
+                                        </div>
+                                    </div>
+                                    <div class="edu-item">
+                                        <i class="fa-solid fa-compass-drafting edu-icon-spark"></i>
+                                        <div>
+                                            <strong>Mühendislik Vizyonu:</strong>
+                                            <span>Topluma fayda sağlayan, kaliteli, ölçeklenebilir ve çözüm odaklı sistemler inşa etme odaklı yaklaşım.</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="career-tech-stack">
+                                    <span>Yazılım Mimarisi</span>
+                                    <span>Veri Yapıları & Algoritmalar</span>
+                                    <span>Clean Architecture</span>
+                                    <span>Komite Yönetimi</span>
+                                </div>
                             </div>
                         </div>
                     </div>
