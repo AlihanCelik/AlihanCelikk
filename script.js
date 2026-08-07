@@ -326,36 +326,38 @@ function initMatrixRain() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Subtle, Elegant Falling Binary (1 & 0) Streams
-    const fontSize = 16;
-    const spacing = 55; // Generously spaced columns (az ve dinlendirici)
-    const columns = Math.floor(canvas.width / spacing);
+    // Defined, Spaced Falling Binary (1 & 0) Streams
+    const fontSize = 17;
+    const spacingX = 52; // Horizontal column spacing
+    const lineGap = 30;  // Vertical line spacing (aralıklı iniş)
+    const columns = Math.floor(canvas.width / spacingX);
     const rainDrops = Array(columns).fill(1);
 
     function draw() {
-        ctx.fillStyle = "rgba(3, 7, 18, 0.12)"; // Gentle trail fade
+        ctx.fillStyle = "rgba(3, 7, 18, 0.14)"; // Crisp trail fade
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+        ctx.font = `bold ${fontSize}px 'JetBrains Mono', monospace`;
 
         for (let i = 0; i < rainDrops.length; i++) {
             const binaryChar = Math.random() > 0.5 ? "1" : "0";
             
-            // Soft neon cyan & green tint - gentle on eyes
+            // Defined, crisp neon cyan & emerald green - clear & stylish
             ctx.fillStyle = (i % 2 === 0) 
-                ? "rgba(0, 240, 255, 0.28)" 
-                : "rgba(0, 255, 157, 0.28)";
+                ? "rgba(0, 240, 255, 0.48)" 
+                : "rgba(0, 255, 157, 0.48)";
 
-            ctx.fillText(binaryChar, i * spacing, rainDrops[i] * fontSize);
+            const yPos = rainDrops[i] * lineGap;
+            ctx.fillText(binaryChar, i * spacingX, yPos);
 
-            if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.985) {
+            if (yPos > canvas.height && Math.random() > 0.982) {
                 rainDrops[i] = 0;
             }
-            rainDrops[i]++;
+            rainDrops[i] += 1.2; // Aralıklı süzülüş
         }
     }
 
-    matrixInterval = setInterval(draw, 50); // Slow, peaceful drop speed
+    matrixInterval = setInterval(draw, 45); // Smooth cadence
 
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
@@ -372,7 +374,7 @@ function toggleMatrixRainState() {
         canvas.style.opacity = "0";
         matrixActive = false;
     } else {
-        canvas.style.opacity = "0.35";
+        canvas.style.opacity = "0.48";
         matrixActive = true;
     }
 }
