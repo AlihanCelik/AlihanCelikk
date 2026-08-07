@@ -840,12 +840,11 @@ body {
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
 }
 
-/* --- Career Dual Grid (Separate Work & Education Sections) --- */
+/* --- Career Vertical Sections (Separate Work & Education) --- */
 .career-dual-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
     margin-top: 2rem;
 }
 
