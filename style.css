@@ -840,6 +840,55 @@ body {
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
 }
 
+/* --- Career Dual Grid (Separate Work & Education Sections) --- */
+.career-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.career-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.career-section-title {
+    margin-bottom: 0.5rem;
+}
+
+.column-title-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    font-family: var(--font-code);
+    font-size: 1.05rem;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.column-title-badge.work-theme {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
+    border: 1px solid rgba(0, 240, 255, 0.35);
+    color: var(--accent-cyan);
+}
+
+.column-title-badge.edu-theme {
+    background: linear-gradient(135deg, rgba(0, 255, 157, 0.15), rgba(0, 240, 255, 0.15));
+    border: 1px solid rgba(0, 255, 157, 0.35);
+    color: var(--accent-green);
+}
+
+.career-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
 .cyber-roadmap {
     position: relative;
     max-width: 950px;
