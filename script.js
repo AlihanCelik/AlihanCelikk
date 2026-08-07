@@ -328,21 +328,44 @@ function initMatrixRain() {
     const columns = Math.floor(canvas.width / 45); // Spaced out for readable code words
     const rainDrops = Array(columns).fill(1);
 
+    // -------------------------------------------------------------------------
+    // 3D Rotating Binary (1 & 0) Ring System
+    // -------------------------------------------------------------------------
+    const binaryParticles = [];
+    const particleCount = 120;
+    const ringRadius = Math.min(window.innerWidth, window.innerHeight) * 0.38;
+
+    for (let i = 0; i < particleCount; i++) {
+        // Distribute on 3D rings
+        const theta = (i / particleCount) * Math.PI * 2 * 3; // 3 turns spiral/ring
+        const phi = (i / particleCount) * Math.PI - Math.PI / 2;
+        const radius = ringRadius + (Math.random() - 0.5) * 80;
+
+        binaryParticles.push({
+            x: radius * Math.cos(theta) * Math.cos(phi),
+            y: radius * Math.sin(phi),
+            z: radius * Math.sin(theta) * Math.cos(phi),
+            val: Math.random() > 0.5 ? "1" : "0",
+            color: Math.random() > 0.5 ? "#00f0ff" : "#a855f7"
+        });
+    }
+
+    let angleX = 0;
+    let angleY = 0;
+
     function draw() {
-        ctx.fillStyle = "rgba(9, 13, 22, 0.1)";
+        ctx.fillStyle = "rgba(9, 13, 22, 0.12)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        // 1. Draw Falling Code Rain
         ctx.font = `${fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
-
         for (let i = 0; i < rainDrops.length; i++) {
-            // Alternate between full code words and single characters
             const isCodeWord = Math.random() > 0.4;
             const text = isCodeWord 
                 ? codeTokens[Math.floor(Math.random() * codeTokens.length)]
                 : alphabet.charAt(Math.floor(Math.random() * alphabet.length));
 
-            // Neon Cyan or Matrix Green
-            ctx.fillStyle = (i % 2 === 0) ? "#00f0ff" : "#00ff9d";
+            ctx.fillStyle = (i % 2 === 0) ? "rgba(0, 240, 255, 0.45)" : "rgba(0, 255, 157, 0.45)";
             ctx.fillText(text, i * 45, rainDrops[i] * fontSize);
 
             if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
@@ -350,9 +373,43 @@ function initMatrixRain() {
             }
             rainDrops[i]++;
         }
+
+        // 2. Draw 3D Rotating Binary (1 & 0) Ring System
+        angleY += 0.006;
+        angleX += 0.003;
+
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const focalLength = 400;
+
+        const cosY = Math.cos(angleY), sinY = Math.sin(angleY);
+        const cosX = Math.cos(angleX), sinX = Math.sin(angleX);
+
+        binaryParticles.forEach(p => {
+            // Y rotation
+            let x1 = p.x * cosY - p.z * sinY;
+            let z1 = p.z * cosY + p.x * sinY;
+
+            // X rotation
+            let y1 = p.y * cosX - z1 * sinX;
+            let z2 = z1 * cosX + p.y * sinX;
+
+            const scale = focalLength / (focalLength + z2 + 300);
+            const projX = centerX + x1 * scale;
+            const projY = centerY + y1 * scale;
+
+            if (scale > 0) {
+                const particleSize = Math.max(10, Math.floor(18 * scale));
+                ctx.font = `bold ${particleSize}px 'JetBrains Mono', monospace`;
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = Math.min(1, Math.max(0.2, scale * 0.9));
+                ctx.fillText(p.val, projX, projY);
+                ctx.globalAlpha = 1.0;
+            }
+        });
     }
 
-    matrixInterval = setInterval(draw, 40);
+    matrixInterval = setInterval(draw, 35);
 
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
