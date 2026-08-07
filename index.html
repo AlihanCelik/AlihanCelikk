@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alihan Çelik | Full-Stack Software Engineer & AI Developer</title>
+    <meta name="description" content="Kişisel geliştirici portfolyosu. Projeler, yetenekler, yapay zeka ve yazılım geliştirme alanındaki çalışmalar.">
+    <meta name="keywords" content="Alihan Çelik, Coder, Software Engineer, Full-Stack, Flutter, Python, AI Developer, Web Development">
+    <meta name="author" content="Alihan Çelik">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Alihan Çelik | Software Engineer">
+    <meta property="og:description" content="Geliştirici portfolyosu, projeler ve teknoloji yetenekleri.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Matrix Rain / Particle Effect -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo">
+                <span class="code-bracket">&lt;</span><span class="brand-name">alihan.dev</span><span class="code-bracket"> /&gt;</span>
+            </a>
+            
+            <div class="status-badge" id="availability-status">
+                <span class="pulse-dot"></span>
+                <span class="status-text">Geliştirmeye Açık / Open for Projects</span>
+            </div>
+
+            <nav class="main-nav" id="main-nav">
+                <a href="#about" class="nav-link"><span class="nav-num">01.</span> ~/hakkimda</a>
+                <a href="#skills" class="nav-link"><span class="nav-num">02.</span> ~/yetenekler</a>
+                <a href="#projects" class="nav-link"><span class="nav-num">03.</span> ~/projeler</a>
+                <a href="#terminal-section" class="nav-link"><span class="nav-num">04.</span> ~/terminal</a>
+                <a href="#contact" class="nav-link"><span class="nav-num">05.</span> ~/iletisim</a>
+            </nav>
+
+            <div class="header-controls">
+                <button class="icon-btn" id="toggle-matrix-btn" title="Matrix Yağmuru Efekti">
+                    <i class="fa-solid fa-code"></i>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Menüyü Aç/Kapat">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with IDE Mockup -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-grid">
+                <!-- Hero Intro Info -->
+                <div class="hero-text">
+                    <div class="terminal-tag">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>system_ready --user alihan</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Merhaba, ben <span class="highlight-gradient">Alihan Çelik</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span id="typing-role">Full-Stack Software Engineer</span><span class="blinking-cursor">|</span>
+                    </h2>
+                    <p class="hero-description">
+                        Modern web sistemleri, mobil uygulamalar (Flutter) ve Yapay Zeka çözümleri üreten tutkulu bir yazılımcıyım. Temiz kod (Clean Code), yüksek performans ve şık kullanıcı deneyimleri odak noktamdır.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fa-solid fa-folder-open"></i> Projelerimi İncele
+                        </a>
+                        <a href="#terminal-section" class="btn btn-secondary">
+                            <i class="fa-solid fa-terminal"></i> Terminali Çalıştır
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fa-solid fa-paper-plane"></i> İletişime Geç
+                        </a>
+                    </div>
+
+                    <div class="quick-stats">
+                        <div class="stat-item">
+                            <span class="stat-num" id="stat-projects">15+</span>
+                            <span class="stat-label">Tamamlanan Proje</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">3+</span>
+                            <span class="stat-label">Yıl Deneyim</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">99.9%</span>
+                            <span class="stat-label">Kod Tutkusu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive IDE Editor Mockup -->
+                <div class="ide-wrapper">
+                    <div class="ide-container">
+                        <!-- IDE Header Bar -->
+                        <div class="ide-header">
+                            <div class="window-controls">
+                                <span class="control-btn close"></span>
+                                <span class="control-btn minimize"></span>
+                                <span class="control-btn maximize"></span>
+                            </div>
+                            <div class="ide-tabs">
+                                <button class="ide-tab active" data-tab="tab-developer">
+                                    <i class="fa-brands fa-typescript file-icon ts"></i> developer.ts
+                                </button>
+                                <button class="ide-tab" data-tab="tab-skills">
+                                    <i class="fa-solid fa-code file-icon json"></i> skills.config.json
+                                </button>
+                                <button class="ide-tab" data-tab="tab-contact">
+                                    <i class="fa-brands fa-python file-icon py"></i> contact.py
+                                </button>
+                            </div>
+                            <div class="ide-actions">
+                                <span class="ide-badge"><i class="fa-solid fa-check-double"></i> TypeScript 5.2</span>
+                            </div>
+                        </div>
+
+                        <!-- IDE Code Area -->
+                        <div class="ide-body">
+                            <!-- Tab 1: Developer Info -->
+                            <div class="tab-content active" id="tab-developer">
+                                <pre><code><span class="code-keyword">import</span> { Developer, TechStack, Passion } <span class="code-keyword">from</span> <span class="code-string">'@alihan/core'</span>;
+
+<span class="code-keyword">export class</span> <span class="code-class">SoftwareEngineer</span> <span class="code-keyword">implements</span> Developer {
+    <span class="code-keyword">readonly</span> name = <span class="code-string">'Alihan Çelik'</span>;
+    <span class="code-keyword">readonly</span> title = <span class="code-string">'Full-Stack & AI Engineer'</span>;
+    <span class="code-keyword">readonly</span> location = <span class="code-string">'Turkey 🇹🇷'</span>;
+    
+    <span class="code-keyword">public</span> status = <span class="code-string">'🚀 Creating next-gen software solutions'</span>;
+    
+    <span class="code-keyword">public getSummary</span>(): <span class="code-type">string</span> {
+        <span class="code-keyword">return</span> <span class="code-string">`Karmaşık problemleri basit, ölçeklenebilir ve 
+                estetik yazılımlara dönüştürüyorum.`</span>;
+    }
+
+    <span class="code-keyword">public currentFocus</span>(): <span class="code-type">string[]</span> {
+        <span class="code-keyword">return</span> [
+            <span class="code-string">'Flutter & Cross-Platform Mobile Apps'</span>,
+            <span class="code-string">'Python Backend & AI Agents / LLMs'</span>,
+            <span class="code-string">'Modern Frontend (React / Web Native)'</span>,
+            <span class="code-string">'System Architecture & Cloud'</span>
+        ];
+    }
+}</code></pre>
+                            </div>
+
+                            <!-- Tab 2: Skills JSON -->
+                            <div class="tab-content" id="tab-skills">
+                                <pre><code>{
+  <span class="code-json-key">"developer"</span>: <span class="code-string">"Alihan Çelik"</span>,
+  <span class="code-json-key">"core_languages"</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"Dart"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"TypeScript"</span>, <span class="code-string">"SQL"</span>],
+  <span class="code-json-key">"frameworks"</span>: {
+    <span class="code-json-key">"mobile"</span>: [<span class="code-string">"Flutter"</span>],
+    <span class="code-json-key">"backend"</span>: [<span class="code-string">"FastAPI"</span>, <span class="code-string">"Flask"</span>, <span class="code-string">"Node.js"</span>],
+    <span class="code-json-key">"frontend"</span>: [<span class="code-string">"HTML5/CSS3"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Tailwind/Vanilla CSS"</span>]
+  },
+  <span class="code-json-key">"ai_and_data"</span>: [<span class="code-string">"LangChain"</span>, <span class="code-string">"OpenAI API"</span>, <span class="code-string">"System Control Logic"</span>],
+  <span class="code-json-key">"tools"</span>: [<span class="code-string">"Git"</span>, <span class="code-string">"Docker"</span>, <span class="code-string">"VS Code"</span>, <span class="code-string">"macOS Terminal"</span>, <span class="code-string">"Postman"</span>]
+}</code></pre>
+                            </div>
+
+                            <!-- Tab 3: Contact Python Script -->
+                            <div class="tab-content" id="tab-contact">
+                                <pre><code><span class="code-keyword">import</span> sys
+<span class="code-keyword">from</span> dataclasses <span class="code-keyword">import</span> dataclass
+
+<span class="code-decorator">@dataclass</span>
+<span class="code-keyword">class</span> <span class="code-class">ContactRequest</span>:
+    sender_name: <span class="code-type">str</span>
+    email: <span class="code-type">str</span>
+    message: <span class="code-type">str</span>
+
+<span class="code-keyword">def</span> <span class="code-func">send_message</span>(request: ContactRequest) -> <span class="code-type">bool</span>:
+    print(f<span class="code-string">"[+] Connecting to Alihan's inbox..."</span>)
+    <span class="code-comment"># Dispatching message via secure API</span>
+    print(f<span class="code-string">"[✓] Message successfully delivered from {request.sender_name}!"</span>)
+    <span class="code-keyword">return</span> <span class="code-keyword">True</span>
+
+<span class="code-keyword">if</span> __name__ == <span class="code-string">"__main__"</span>:
+    req = ContactRequest(
+        sender_name=<span class="code-string">"Visitor"</span>, 
+        email=<span class="code-string">"you@company.com"</span>, 
+        message=<span class="code-string">"Let's build something awesome together!"</span>
+    )
+    send_message(req)</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- IDE Footer Status Bar -->
+                        <div class="ide-footer">
+                            <div class="ide-footer-left">
+                                <span><i class="fa-solid fa-code-branch"></i> main</span>
+                                <span><i class="fa-solid fa-rotate-right"></i> 0 errors, 0 warnings</span>
+                            </div>
+                            <div class="ide-footer-right">
+                                <span>UTF-8</span>
+                                <span>Spaces: 4</span>
+                                <span>JSON / TS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&lt;whoami&gt;</span>
+                    <h2 class="section-title">Hakkımda & Yaklaşımım</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card glass-panel">
+                        <div class="about-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Yazılım Felsefem</h3>
+                        <p>Kod yazmak benim için sadece algoritma üretmek değil, gerçek dünya sorunlarına etkili, hızlı ve sürdürülebilir çözümler sunma sanatıdır. Her projede mimari düzen ve kod kalitesine önem veririm.</p>
+                    </div>
+
+                    <div class="about-card glass-panel">
+                        <div class="about-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>Yapay Zeka & Sistemler</h3>
+                        <p>Masaüstü asistanları, yapay zeka entegrasyonları, backend servisleri ve otomasyon araçları üzerine çalışıyorum. Güncel teknolojileri yakından takip edip projelere hızla adapte ederim.</p>
+                    </div>
+
+                    <div class="about-card glass-panel">
+                        <div class="about-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3>Çapraz Platform (Mobile & Web)</h3>
+                        <p>Flutter ile masaüstü (macOS/Windows) ve mobil uygulamalar, modern web teknolojileri ile duyarlı (responsive) ve dinamik kullanıcı arayüzleri geliştiriyorum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack & Skills Section -->
+        <section id="skills" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&lt;tech-stack&gt;</span>
+                    <h2 class="section-title">Kullandığım Teknolojiler</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-categories">
+                    <!-- Languages -->
+                    <div class="skill-category glass-panel">
+                        <h3 class="category-title"><i class="fa-solid fa-code"></i> Diller</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="skill-tag"><i class="fa-solid fa-cubes"></i> Dart</span>
+                            <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+                            <span class="skill-tag"><i class="fa-brands fa-node-js"></i> TypeScript</span>
+                            <span class="skill-tag"><i class="fa-solid fa-database"></i> SQL</span>
+                            <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</span>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks & Mobile -->
+                    <div class="skill-category glass-panel">
+                        <h3 class="category-title"><i class="fa-solid fa-layer-group"></i> Framework & Mobil</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag"><i class="fa-solid fa-mobile"></i> Flutter (iOS/Android/Desktop)</span>
+                            <span class="skill-tag"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+                            <span class="skill-tag"><i class="fa-brands fa-react"></i> React</span>
+                            <span class="skill-tag"><i class="fa-solid fa-flask"></i> Flask</span>
+                            <span class="skill-tag"><i class="fa-brands fa-node"></i> Node.js</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & Systems -->
+                    <div class="skill-category glass-panel">
+                        <h3 class="category-title"><i class="fa-solid fa-brain"></i> Yapay Zeka & Araçlar</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag"><i class="fa-solid fa-robot"></i> LLM Integrations / OpenAI</span>
+                            <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                            <span class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</span>
+                            <span class="skill-tag"><i class="fa-solid fa-terminal"></i> Zsh / Bash Scripting</span>
+                            <span class="skill-tag"><i class="fa-solid fa-server"></i> REST APIs & JSON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&lt;portfolio&gt;</span>
+                    <h2 class="section-title">Öne Çıkan Projelerim</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <!-- Project Category Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="ai">Yapay Zeka & Backend</button>
+                    <button class="filter-btn" data-filter="mobile">Mobil & Desktop</button>
+                    <button class="filter-btn" data-filter="web">Web Geliştirme</button>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card glass-panel" data-category="ai mobile">
+                        <div class="project-header">
+                            <div class="project-folder"><i class="fa-regular fa-folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="project-demo-btn" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Atlas Asistanım</h3>
+                        <p class="project-description">
+                            Python backend sistem kontrolü ve Flutter frontend ile geliştirilmiş kişisel masaüstü yapay zeka asistanı. Sesli komutlar, sistem kontrolleri ve canlı kod oluşturma desteği.
+                        </p>
+                        <div class="project-tech-list">
+                            <span>Python</span>
+                            <span>Flutter</span>
+                            <span>System Control API</span>
+                            <span>Dart</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card glass-panel" data-category="web ai">
+                        <div class="project-header">
+                            <div class="project-folder"><i class="fa-regular fa-folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="project-demo-btn" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Code Rain & Painter Visualizer</h3>
+                        <p class="project-description">
+                            Yüksek hızlı Matrix yağmuru ve ızgara görselleştirici widget motoru. Özel canvas işlemleri ve 60 FPS akıcı render performans algoritması.
+                        </p>
+                        <div class="project-tech-list">
+                            <span>Dart Canvas</span>
+                            <span>Custom Painter</span>
+                            <span>Algorithms</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card glass-panel" data-category="ai">
+                        <div class="project-header">
+                            <div class="project-folder"><i class="fa-regular fa-folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="project-demo-btn" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Smart Backend Engine</h3>
+                        <p class="project-description">
+                            Ölçeklenebilir FastAPI & Flask mimarisi ile veri işleme, async kuyruk mekanizması ve akıllı mikro servis yönetimi.
+                        </p>
+                        <div class="project-tech-list">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>Docker</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card glass-panel" data-category="web">
+                        <div class="project-header">
+                            <div class="project-folder"><i class="fa-regular fa-folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="project-demo-btn" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Coder Portfolio Web App</h3>
+                        <p class="project-description">
+                            IDE simülasyonlu, terminal komut destekli ve Matrix yağmuru efektli modern yazılımcı web sitesi.
+                        </p>
+                        <div class="project-tech-list">
+                            <span>HTML5/CSS3</span>
+                            <span>JavaScript ES6</span>
+                            <span>Glassmorphism</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal Section -->
+        <section id="terminal-section" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&lt;interactive-cli&gt;</span>
+                    <h2 class="section-title">Canlı Terminal Komut Satırı</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <p class="terminal-intro">
+                    Sitede komut yazarak gezinmek ister misin? Aşağıdaki terminale <code class="cmd-highlight">help</code>, <code class="cmd-highlight">projects</code>, <code class="cmd-highlight">skills</code>, <code class="cmd-highlight">whoami</code> veya <code class="cmd-highlight">clear</code> yazabilirsin!
+                </p>
+
+                <div class="terminal-box glass-panel">
+                    <div class="terminal-header">
+                        <div class="window-controls">
+                            <span class="control-btn close"></span>
+                            <span class="control-btn minimize"></span>
+                            <span class="control-btn maximize"></span>
+                        </div>
+                        <div class="terminal-title"><i class="fa-solid fa-terminal"></i> alihan@coder-laptop: ~</div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-line system-welcome">
+                            <span class="welcome-text">Alihan Çelik CLI Shell v2.4.0 (x86_64-apple-darwin)</span>
+                            <br>
+                            <span>Komut listesi için <code class="cmd-highlight">help</code> yazıp ENTER'a basınız.</span>
+                        </div>
+                    </div>
+                    <div class="terminal-input-row">
+                        <span class="prompt-symbol">alihan@dev:~$</span>
+                        <input type="text" id="terminal-input" placeholder="komut yazın... (örn: help)" autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&lt;get-in-touch&gt;</span>
+                    <h2 class="section-title">İletişime Geç</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-wrapper glass-panel">
+                    <div class="contact-info">
+                        <h3>Bir Projen mi Var?</h3>
+                        <p>Yeni fırsatlar, ortak projeler veya sadece yazılım üzerine sohbet etmek için bana ulaşabilirsin!</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <span class="contact-label">E-Posta</span>
+                                    <button class="copy-email-btn" id="copy-email-btn">
+                                        <span id="email-text">alihan.celik@example.com</span>
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <span class="contact-label">Konum</span>
+                                    <span>Türkiye 🇹🇷 / Remote</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="mailto:alihan.celik@example.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Form -->
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="form-name">Adınız / Unvanınız</label>
+                            <input type="text" id="form-name" placeholder="Örn: Ahmet Yılmaz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">E-Posta Adresiniz</label>
+                            <input type="email" id="form-email" placeholder="Örn: ahmet@sirket.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Mesajınız</label>
+                            <textarea id="form-message" rows="4" placeholder="Projeniz veya mesajınız hakkında detaylar..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fa-solid fa-paper-plane"></i> Mesaj Gönder (POST /api/contact)
+                        </button>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 <strong>Alihan Çelik</strong>. Designed & Built with <i class="fa-solid fa-heart heartbeat"></i> & Pure Code.</p>
+            <p class="footer-sub">System Status: <span class="status-online">● All Systems Operational</span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
