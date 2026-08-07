@@ -457,16 +457,28 @@ function initContactForm() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("form-name").value;
+        const nameInput = document.getElementById("form-name");
+        const emailInput = document.getElementById("form-email");
+        const subjectInput = document.getElementById("form-subject");
+        const messageInput = document.getElementById("form-message");
+
+        const name = nameInput ? nameInput.value : "";
+        const email = emailInput ? emailInput.value : "";
+        const subject = subjectInput ? subjectInput.value : "Portfolyo İletişim Mesajı";
+        const message = messageInput ? messageInput.value : "";
 
         statusDiv.style.color = "var(--accent-cyan)";
-        statusDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Mesaj gönderiliyor...`;
+        statusDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Mesaj hazırlanıyor...`;
+
+        // Create mailto direct URL to send email directly to alihancelikk03@gmail.com
+        const mailtoUrl = `mailto:alihancelikk03@gmail.com?subject=${encodeURIComponent(subject + " - " + name)}&body=${encodeURIComponent("Gönderen: " + name + "\nE-Posta: " + email + "\n\nMesaj:\n" + message)}`;
 
         setTimeout(() => {
+            window.location.href = mailtoUrl;
             statusDiv.style.color = "var(--accent-green)";
-            statusDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> Teşekkürler ${name}! Mesajınız alındı.`;
+            statusDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> Teşekkürler ${name}! E-posta istemciniz açıldı, direkt iletildi.`;
             form.reset();
-        }, 1200);
+        }, 800);
     });
 }
 
