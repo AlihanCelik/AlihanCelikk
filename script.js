@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initProjectFilters();
     initTimelineFilters();
     initMatrixRain();
+    initMouseCursorEffect();
     initCopyEmail();
     initContactForm();
     initMobileNav();
@@ -311,24 +312,38 @@ function initMatrixRain() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
+    // Programming Languages & Cyber Code Tokens
+    const codeTokens = [
+        "Kotlin", "fun", "val", "CleanArch", "Spring", "ASP.NET", "Compose", 
+        "FastAPI", "Python", "Flutter", "Room", "Hilt", "STOMP", "RabbitMQ", 
+        "Postgres", "Docker", "async", "await", "0101", "</>", "{ }", "=>", 
+        "class", "import", "return", "GPA:3.45", "Retrofit", "Coroutines"
+    ];
+
     const katakana = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
     const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</>{}[]=+#$";
     const alphabet = katakana + latin;
 
-    const fontSize = 16;
-    const columns = Math.floor(canvas.width / fontSize);
+    const fontSize = 15;
+    const columns = Math.floor(canvas.width / 45); // Spaced out for readable code words
     const rainDrops = Array(columns).fill(1);
 
     function draw() {
-        ctx.fillStyle = "rgba(9, 13, 22, 0.08)";
+        ctx.fillStyle = "rgba(9, 13, 22, 0.1)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = "#00f0ff";
-        ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+        ctx.font = `${fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
 
         for (let i = 0; i < rainDrops.length; i++) {
-            const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-            ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+            // Alternate between full code words and single characters
+            const isCodeWord = Math.random() > 0.4;
+            const text = isCodeWord 
+                ? codeTokens[Math.floor(Math.random() * codeTokens.length)]
+                : alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+
+            // Neon Cyan or Matrix Green
+            ctx.fillStyle = (i % 2 === 0) ? "#00f0ff" : "#00ff9d";
+            ctx.fillText(text, i * 45, rainDrops[i] * fontSize);
 
             if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                 rainDrops[i] = 0;
@@ -337,7 +352,7 @@ function initMatrixRain() {
         }
     }
 
-    matrixInterval = setInterval(draw, 35);
+    matrixInterval = setInterval(draw, 40);
 
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
@@ -356,6 +371,51 @@ function toggleMatrixRainState() {
     } else {
         canvas.style.opacity = "0.35";
         matrixActive = true;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Interactive Mouse Cursor Glow & Code Particle Trail                        */
+/* -------------------------------------------------------------------------- */
+function initMouseCursorEffect() {
+    const cursor = document.getElementById("cyber-cursor");
+    const trailSymbols = ["{ }", "</>", "01", "=>", "fun", "val", "class", "*", "#", "KTÜ"];
+    let lastTime = 0;
+
+    document.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        // Smooth follow halo cursor
+        if (cursor) {
+            cursor.style.transform = `translate3d(${x - 20}px, ${y - 20}px, 0)`;
+        }
+
+        // Throttle particle creation rate
+        const now = Date.now();
+        if (now - lastTime > 45) {
+            lastTime = now;
+            createCodeParticle(x, y);
+        }
+    });
+
+    function createCodeParticle(x, y) {
+        const particle = document.createElement("span");
+        particle.className = "cursor-code-particle";
+        particle.textContent = trailSymbols[Math.floor(Math.random() * trailSymbols.length)];
+        
+        // Random offset drift
+        const offsetX = (Math.random() - 0.5) * 30;
+        const offsetY = (Math.random() - 0.5) * 30;
+
+        particle.style.left = `${x + offsetX}px`;
+        particle.style.top = `${y + offsetY}px`;
+
+        document.body.appendChild(particle);
+
+        setTimeout(() => {
+            particle.remove();
+        }, 700);
     }
 }
 

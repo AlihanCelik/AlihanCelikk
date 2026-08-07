@@ -1373,3 +1373,43 @@ body {
         gap: 1.5rem;
     }
 }
+
+/* --- Interactive Cyber Cursor Glow & Particle Trail --- */
+#cyber-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.4) 0%, rgba(168, 85, 247, 0.15) 50%, transparent 70%);
+    border: 1px solid rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 35px rgba(168, 85, 247, 0.3);
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-code-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--accent-cyan), 0 0 15px var(--accent-purple);
+    animation: particleFloatFade 0.7s ease-out forwards;
+}
+
+@keyframes particleFloatFade {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.4) translateY(-35px) rotate(25deg);
+    }
+}
