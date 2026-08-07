@@ -326,60 +326,36 @@ function initMatrixRain() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Software Engineer Code Snippets & Binary Streams
-    const codeLines = [
-        "fun main() {",
-        "val dev = Alihan",
-        "viewModel.fetch()",
-        "SpringApplication.run()",
-        "FastAPI.predict()",
-        "BERTurk.analyze()",
-        "SELECT * FROM db",
-        "101100101101",
-        "CleanArch.build()",
-        "Compose.render()",
-        "Docker.compose()",
-        "RabbitMQ.send()",
-        "STOMP.connect()",
-        "GPA: 3.45",
-        "KTU.CS.Graduate",
-        "RoomDatabase.query()",
-        "async await", "0100101", "</>", "{ }", "=>", "class Engineer", "override fun"
-    ];
-
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / 50); // Spaced columns for readable falling code lines
+    // Subtle, Elegant Falling Binary (1 & 0) Streams
+    const fontSize = 16;
+    const spacing = 55; // Generously spaced columns (az ve dinlendirici)
+    const columns = Math.floor(canvas.width / spacing);
     const rainDrops = Array(columns).fill(1);
 
     function draw() {
-        ctx.fillStyle = "rgba(3, 7, 18, 0.14)"; // Deep obsidian black trail fade
+        ctx.fillStyle = "rgba(3, 7, 18, 0.12)"; // Gentle trail fade
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Draw Cascading Code Streams
-        ctx.font = `${fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
+        ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+
         for (let i = 0; i < rainDrops.length; i++) {
-            const text = codeLines[Math.floor(Math.random() * codeLines.length)];
+            const binaryChar = Math.random() > 0.5 ? "1" : "0";
+            
+            // Soft neon cyan & green tint - gentle on eyes
+            ctx.fillStyle = (i % 2 === 0) 
+                ? "rgba(0, 240, 255, 0.28)" 
+                : "rgba(0, 255, 157, 0.28)";
 
-            // Neon Cyan, Neon Emerald, or Electric Violet
-            const colorIndex = i % 3;
-            if (colorIndex === 0) {
-                ctx.fillStyle = "rgba(0, 240, 255, 0.5)";
-            } else if (colorIndex === 1) {
-                ctx.fillStyle = "rgba(0, 255, 157, 0.5)";
-            } else {
-                ctx.fillStyle = "rgba(192, 132, 252, 0.5)";
-            }
+            ctx.fillText(binaryChar, i * spacing, rainDrops[i] * fontSize);
 
-            ctx.fillText(text, i * 50, rainDrops[i] * fontSize);
-
-            if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.985) {
                 rainDrops[i] = 0;
             }
             rainDrops[i]++;
         }
     }
 
-    matrixInterval = setInterval(draw, 35);
+    matrixInterval = setInterval(draw, 50); // Slow, peaceful drop speed
 
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
@@ -396,7 +372,7 @@ function toggleMatrixRainState() {
         canvas.style.opacity = "0";
         matrixActive = false;
     } else {
-        canvas.style.opacity = "0.65";
+        canvas.style.opacity = "0.35";
         matrixActive = true;
     }
 }
