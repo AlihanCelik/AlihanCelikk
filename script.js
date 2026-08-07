@@ -384,7 +384,7 @@ function toggleMatrixRainState() {
 /* -------------------------------------------------------------------------- */
 function initMouseCursorEffect() {
     const cursor = document.getElementById("cyber-cursor");
-    const trailSymbols = ["{ }", "</>", "01", "=>", "fun", "val", "class", "*", "#", "KTÜ"];
+    const trailSymbols = ["{ }", "</>", "01", "=>", "fun", "val", "class", "*", "#"];
     let lastTime = 0;
 
     document.addEventListener("mousemove", (e) => {
