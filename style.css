@@ -633,6 +633,60 @@ body {
     color: var(--text-muted);
 }
 
+/* --- Cyber CV Download Widget Styling --- */
+.cv-download-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.cv-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.15rem;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    font-family: var(--font-code);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition-fast);
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.cv-btn.tr-cv {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(0, 240, 255, 0.05));
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+.cv-btn.tr-cv:hover {
+    background: var(--accent-cyan);
+    color: #030712;
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.cv-btn.eng-cv {
+    background: linear-gradient(135deg, rgba(0, 255, 157, 0.15), rgba(0, 255, 157, 0.05));
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+.cv-btn.eng-cv:hover {
+    background: var(--accent-green);
+    color: #030712;
+    box-shadow: 0 0 18px rgba(0, 255, 157, 0.4);
+    transform: translateY(-2px);
+}
+
 /* --- IDE Mockup Component --- */
 .ide-wrapper {
     perspective: 1000px;
