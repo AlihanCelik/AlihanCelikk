@@ -1,97 +1,128 @@
 <div align="center">
-  <h1>Alihan ÇELİK</h1>
-  <h3>Computer Engineer | Mobil Uygulama & Yazılım Geliştirici</h3>
-  <p>Karadeniz Teknik Üniversitesi Bilgisayar Mühendisliği Mezunu (GPA: 3.45)</p>
 
-  <p>
+  <!-- Animated Typing Header -->
+  <a href="https://alihancelik.github.io/AlihanCelikk/">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&size=28&pause=1000&color=00F0FF&center=true&vCenter=true&width=700&height=60&lines=Hi+%F0%9F%90%8B%2C+I'm+Alihan+%C3%87EL%C4%B0K;Computer+Engineer;Android+%26+Mobile+Developer;Backend+%26+AI+Engineer" alt="Typing Header SVG" />
+  </a>
+
+  <p align="center">
+    <strong>🎓 Karadeniz Technical University — Computer Engineering Graduate (GPA: 3.45)</strong>
+  </p>
+
+  <!-- Badges -->
+  <p align="center">
     <a href="https://alihancelik.github.io/AlihanCelikk/">
-      <img src="https://img.shields.io/badge/🌐_Canlı_Portfolyo_Sitesi-00F0FF?style=for-the-badge&logoColor=000&logo=googlechrome" alt="Canlı Portfolyo Sitesi" />
+      <img src="https://img.shields.io/badge/🌐_Live_Portfolio-00F0FF?style=for-the-badge&logoColor=black" alt="Portfolio Website" />
     </a>
     <a href="https://linkedin.com/in/alihan-çelik-081616248">
       <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
     </a>
     <a href="mailto:alihancelikk03@gmail.com">
-      <img src="https://img.shields.io/badge/E--Posta-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="E-Posta" />
+      <img src="https://img.shields.io/badge/Email_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
     </a>
   </p>
 
-  <p>
+  <p align="center">
     <a href="https://alihancelik.github.io/AlihanCelikk/Alihan_Celik_CV_TR.pdf">
-      <img src="https://img.shields.io/badge/📄_Türkçe_Özgeçmiş_(PDF)-00FF9D?style=for-the-badge" alt="TR CV" />
+      <img src="https://img.shields.io/badge/🇹🇷_Özgeçmiş_(TR_CV)-00f0ff?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="TR CV" />
     </a>
+    &nbsp;&nbsp;
     <a href="https://alihancelik.github.io/AlihanCelikk/Alihan_Celik_CV_ENG.pdf">
-      <img src="https://img.shields.io/badge/📄_English_Resume_(PDF)-A855F7?style=for-the-badge" alt="ENG CV" />
+      <img src="https://img.shields.io/badge/🇬🇧_Resume_(ENG_CV)-00ff9d?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="ENG CV" />
     </a>
+    &nbsp;&nbsp;
+    <img src="https://komarev.com/ghpvc/?username=alihancelik&label=Profile%20Views&color=00f0ff&style=flat-square" alt="Profile Views" />
   </p>
+
 </div>
-
-<hr />
-
-### 🎓 Hakkımda & Mesleki Özet
-
-Karadeniz Teknik Üniversitesi Bilgisayar Mühendisliği bölümünden **3.45 GPA** ile mezun oldum. Mühendislik eğitimim boyunca teorik bilgi altyapımı modern teknolojiler ve pratik projelerle harmanladım.
-
-- 📱 **Liderlik & Komite Başkanlığı**: Kulübümüzde *Mobil Uygulama Geliştirme Komitesi Başkanı* olarak etkinlikler, ekibimizi yönlendirme ve teknik çalıştaylar organize ettim.
-- 🏢 **Staj Deneyimleri**:
-  - **Orion Innovation Turkey** — Stajyer Mobil Uygulama Geliştirici *(Jetpack Compose & Clean Architecture)*
-  - **ELASOFT** — Stajyer Backend Geliştirici *(ASP.NET Core & Dapper ORM)*
-- 🎯 **Mühendislik Vizyonum**: Sadece kod yazmayı değil; yüksek kalitede, ölçeklenebilir ve kullanıcı odaklı sistemler inşa etmeyi hedefliyorum.
 
 ---
 
-### 🛠️ Uzmanlık Alanları & Teknolojiler
+### 💫 About Me
 
-- **Mobil Geliştirme**: Kotlin, Android SDK, Jetpack Compose, Flutter, Dart, Clean Architecture, MVVM, MVI, Dagger Hilt, Coroutines, Room, Retrofit
-- **Backend & Web**: Java Spring Boot, C#, ASP.NET Core, ASP.NET MVC, RESTful Web API, Python, FastAPI, Microservices
-- **Yapay Zeka & Veritabanı**: BERTurk NLP (Doğal Dil İşleme), TensorFlow, Federatif Öğrenme (Flower), PostgreSQL, Dapper ORM
-- **Araçlar & Teknolojiler**: Git & GitHub, Docker, Firebase, RabbitMQ, WebSocket (STOMP), Android Studio
+```kotlin
+val alihan = ComputerEngineer(
+    name = "Alihan Çelik",
+    university = "Karadeniz Technical University",
+    degree = "Computer Engineering (GPA: 3.45)",
+    role = "Former Mobile Committee President at KTÜ CS Club",
+    internships = listOf("Orion Innovation Turkey (Mobile)", "ELASOFT (Backend)"),
+    passions = listOf("Modern Android", "Clean Architecture", "High-Performance Backend", "AI & NLP")
+)
+```
 
-<br/>
+- 🎓 Graduated from **Karadeniz Technical University** with a degree in **Computer Engineering**.
+- 📱 Former **President of Mobile Application Development Committee** at KTÜ Computer Engineering Club.
+- 🏢 Experienced in corporate mobile app architecture (*Orion Innovation*) and high-speed RESTful Web API development (*ELASOFT*).
+- 🌐 **Personal Live Website**: **[alihancelik.github.io/AlihanCelikk](https://alihancelik.github.io/AlihanCelikk/)**
+- 📫 Contact: **[alihancelikk03@gmail.com](mailto:alihancelikk03@gmail.com)** | **[0 555 037 66 29](tel:+905550376629)**
+
+---
+
+### 🛠️ Tech Stack & Skills
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" />
-  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
-  <img src="https://img.shields.io/badge/Java_Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
-  <img src="https://img.shields.io/badge/.NET_Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://skillicons.dev/icons?i=kotlin,flutter,dart,androidstudio,java,cs,dotnet,py,postgres,docker,firebase,git" alt="Tech Stack Icons" />
+</p>
+
+<table align="center" width="100%">
+  <tr>
+    <td width="33%" valign="top">
+      <h4 align="center">📱 Mobile Development</h4>
+      <ul>
+        <li><b>Languages:</b> Kotlin, Java, Dart</li>
+        <li><b>Frameworks:</b> Jetpack Compose, Flutter</li>
+        <li><b>Architecture:</b> Clean Arch, MVVM, MVI</li>
+        <li><b>Libraries:</b> Dagger Hilt, Coroutines, Retrofit, Room, Flow</li>
+      </ul>
+    </td>
+    <td width="33%" valign="top">
+      <h4 align="center">💻 Backend & Database</h4>
+      <ul>
+        <li><b>Frameworks:</b> Java Spring Boot, ASP.NET Core / MVC, Python (FastAPI)</li>
+        <li><b>Database:</b> PostgreSQL, Dapper ORM</li>
+        <li><b>Messaging & Realtime:</b> RabbitMQ, WebSocket (STOMP)</li>
+      </ul>
+    </td>
+    <td width="33%" valign="top">
+      <h4 align="center">🧠 AI & NLP & Tools</h4>
+      <ul>
+        <li><b>AI & NLP:</b> BERTurk Models, Sentiment Analysis, TensorFlow, Keras</li>
+        <li><b>Federated AI:</b> Flower (flwr) Framework</li>
+        <li><b>Dev Tools:</b> Docker, Android Studio, Git & GitHub</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 🔥 Featured Projects
+
+| Project Name | Description | Tech Stack | Links |
+| :--- | :--- | :--- | :---: |
+| 🤖 **AI Chat Messaging** | Real-time sentiment analysis chat application built with BERTurk NLP models, microservices, and WebSockets. *(Graduation Thesis)* | `Kotlin` `Compose` `Spring Boot` `Python` `WebSocket` `PostgreSQL` | [🌐 Live Demo](https://alihancelik.github.io/AlihanCelikk/#projects) |
+| 🛡️ **Federated Phishing Detection** | Privacy-preserving AI system for local email phishing detection preventing label-flipping attacks. | `Python` `TensorFlow` `Flower` `GloVe` `BiLSTM` | [🌐 Live Demo](https://alihancelik.github.io/AlihanCelikk/#projects) |
+| 🚨 **Depremeli (Teknofest)** | User-centric emergency mobile application ensuring safety and communication during earthquakes. *(Team Lead)* | `Kotlin` `Coroutines` `Retrofit` `Firebase` | [🌐 Live Demo](https://alihancelik.github.io/AlihanCelikk/#projects) |
+| 📝 **Noteor (Google Play)** | Password-protected, customizable note-taking Android app published on Google Play. | `Kotlin` `Android Studio` `Room DB` `Coroutines` | [📲 Google Play](https://alihancelik.github.io/AlihanCelikk/#projects) |
+| 🧮 **Calculation Hub (Google Play)** | Scientific calculator, financial tools, and unit converter Android app published on Google Play. | `Kotlin` `Room DB` `Retrofit` `Coroutines` | [📲 Google Play](https://alihancelik.github.io/AlihanCelikk/#projects) |
+
+---
+
+### 📊 GitHub Activity & Stats
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=alihancelik&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
+  &nbsp;&nbsp;
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=alihancelik&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=alihancelik&theme=tokyonight&hide_border=true" alt="GitHub Streak Stats" />
 </p>
 
 ---
 
-### 🔥 Öne Çıkan Projeler
-
-1. 🤖 **[Duygu Analizli Mesajlaşma Uygulaması (AI Chat)](https://alihancelik.github.io/AlihanCelikk/#projects)** *(Lisans Bitirme Projesi)*
-   - BERTurk tabanlı NLP modelleriyle mesajlardan anlık duygu analizi yapan, Spring Boot mikroservis mimarisi, WebSocket, RabbitMQ ve Kotlin Jetpack Compose ile geliştirilmiş kapsamlı mesajlaşma platformu.
-
-2. 🛡️ **[Federatif Oltalama (Phishing) Tespit Sistemi](https://alihancelik.github.io/AlihanCelikk/#projects)**
-   - Veri gizliliğini koruyarak yerel cihazda e-posta analizi yapan ve hibrit savunma algoritmalarıyla veri zehirleme saldırılarını engelleyen federatif yapay zeka sistemi.
-
-3. 🚨 **[Depremeli (Teknofest Projesi)](https://alihancelik.github.io/AlihanCelikk/#projects)**
-   - Deprem anında kullanıcıların güvenliğini ve kriz anı iletişimini sağlamayı amaçlayan acil durum mobil uygulaması. *(Mobilginers Ekip Lideri)*
-
-4. 📝 **[Noteor (Google Play)](https://alihancelik.github.io/AlihanCelikk/#projects)**
-   - Parola koruması, hatırlatıcı ve kişiselleştirilebilir arayüz seçenekleri sunan, Google Play'de yayınlanmış not alma uygulaması.
-
-5. 🧮 **[Calculation Hub (Google Play)](https://alihancelik.github.io/AlihanCelikk/#projects)**
-   - Temel ve bilimsel matematik işlemlerinin yanı sıra finans, sağlık ve birim dönüştürme araçları sunan Google Play hesaplama uygulaması.
-
----
-
-### 📊 GitHub İstatistikleri
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=alihancelik&show_icons=true&theme=default&hide_border=false" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alihancelik&layout=compact&theme=default&hide_border=false" width="48%" />
-</div>
-
----
-
-### 🌐 İletişim
-
-- 🌐 **Web Sitesi**: [https://alihancelik.github.io/AlihanCelikk/](https://alihancelik.github.io/AlihanCelikk/)
-- 💼 **LinkedIn**: [linkedin.com/in/alihan-çelik-081616248](https://linkedin.com/in/alihan-çelik-081616248)
-- ✉️ **E-Posta**: [alihancelikk03@gmail.com](mailto:alihancelikk03@gmail.com)
-- 📄 **Özgeçmiş (CV)**: [Türkçe CV](https://alihancelik.github.io/AlihanCelikk/Alihan_Celik_CV_TR.pdf) | [English CV](https://alihancelik.github.io/AlihanCelikk/Alihan_Celik_CV_ENG.pdf)
+<p align="center">
+  <sub>Built with ❤️ by <strong>Alihan Çelik</strong> • Powered by GitHub Pages</sub>
+</p>
