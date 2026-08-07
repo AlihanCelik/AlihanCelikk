@@ -33,24 +33,19 @@
 ### 🛠️ Languages & Tools
 
 <p align="left">
-  <!-- Mobile & Languages -->
-  <a href="https://kotlinlang.org/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/kotlinlang-icon.svg" alt="Kotlin" height="42" /></a> 
-  <a href="https://flutter.dev/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/flutterio-icon.svg" alt="Flutter" height="42" /></a>  
-  <a href="https://dart.dev/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/dartlang-icon.svg" alt="Dart" height="42" /></a>  
-  <a href="https://www.android.com/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/android-original-wordmark.svg" alt="Android" height="42" /></a>
-  <a href="https://www.java.com/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg" alt="Java" height="42" /></a>
-  
-  <!-- Backend & Web -->
-  <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/csharp-original.svg" alt="C#" height="42" /></a>    
-  <a href="https://dotnet.microsoft.com/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/dotnetcore.png" alt=".NET Core" height="42" /></a>  
-  <a href="https://spring.io/projects/spring-boot" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/springio-icon.svg" alt="Spring Boot" height="42" /></a>  
-  <a href="https://www.python.org/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python" height="42" /></a>       
-
-  <!-- AI & Databases & Tools -->
-  <a href="https://www.postgresql.org/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL" height="42" /></a> 
-  <a href="https://firebase.google.com/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="42" /></a> 
-  <a href="https://www.docker.com/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker" height="42" /></a>  
-  <a href="https://git-scm.com/" target="_blank"><img style="margin: 6px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="42" /></a>
+  <a href="https://kotlinlang.org/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/kotlinlang-icon.svg" alt="Kotlin" height="46" /></a>
+  <a href="https://flutter.dev/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/flutterio-icon.svg" alt="Flutter" height="46" /></a>
+  <a href="https://dart.dev/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/dartlang-icon.svg" alt="Dart" height="46" /></a>
+  <a href="https://www.android.com/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/android-original-wordmark.svg" alt="Android" height="46" /></a>
+  <a href="https://www.java.com/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg" alt="Java" height="46" /></a>
+  <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/csharp-original.svg" alt="C#" height="46" /></a>
+  <a href="https://dotnet.microsoft.com/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/dotnetcore.png" alt=".NET Core" height="46" /></a>
+  <a href="https://spring.io/projects/spring-boot" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/springio-icon.svg" alt="Spring Boot" height="46" /></a>
+  <a href="https://www.python.org/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python" height="46" /></a>
+  <a href="https://www.postgresql.org/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL" height="46" /></a>
+  <a href="https://firebase.google.com/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="46" /></a>
+  <a href="https://www.docker.com/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker" height="46" /></a>
+  <a href="https://git-scm.com/" target="_blank"><img style="margin: 5px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="46" /></a>
 </p>
 
 ---
