@@ -7,73 +7,73 @@ const USER_DATA = {
     name: "Alihan Çelik",
     roleTitles: [
         "Bilgisayar Mühendisi",
-    roleTitles: [
-        "Bilgisayar Mühendisi"
-    ],
-    email: "alihancelikk03@gmail.com",
-    phone: "0 555 037 66 29",
-    github: "https://github.com/AlihanCelik",
-    linkedin: "https://www.linkedin.com/in/alihan-%C3%A7elik-081616248/",
-    university: "Karadeniz Teknik Üniversitesi - Bilgisayar Mühendisliği (2021-2026)",
-    gpa: "3.45 - Bölüm 4.'sü",
-    bio: "KTÜ Bilgisayar Mühendisliği mezunuyum. Mobil Uygulama Komitesi Başkanlığı yürüttüm. Android (Kotlin), Spring Boot, ASP.NET Core ve Yapay Zeka (BERTurk NLP, Federatif Öğrenme) projeleri geliştiriyorum.",
-    experience: [
-        {
-            company: "Orion Innovation Turkey",
-            role: "Stajyer Mobil Uygulama Geliştirici",
-            period: "Temmuz 2025 – Eylül 2025",
-            tech: ["Kotlin", "Jetpack Compose", "Firebase"]
-        },
-        {
-            company: "ELASOFT",
-            role: "Stajyer Backend Geliştirici",
-            period: "Temmuz 2024 – Ağustos 2024",
-            tech: ["ASP.NET Core", "C#", "Dapper ORM", "Web API"]
-        },
-        {
-            company: "Freelance",
-            role: "Mobil Uygulama Geliştirici",
-            period: "2022 – 2025",
-            tech: ["Kotlin", "Flutter", "Git/GitHub", "Ekip Yönetimi"]
-        }
-    ],
-    projects: [
-        {
-            name: "Duygu Analizli AI Chat (Lisans Bitirme Projesi)",
-            desc: "BERTurk tabanlı NLP modelleriyle mesaj içeriklerinden anlık duygu analizi yapan, mikroservis mimarili anlık mesajlaşma platformu.",
-            category: "mobile ai backend",
-            tech: ["Kotlin", "Spring Boot", "FastAPI", "STOMP", "RabbitMQ", "PostgreSQL"],
-            github: "https://github.com/AlihanCelik"
-        },
-        {
-            name: "Federatif Oltalama (Phishing) Tespit Sistemi",
-            desc: "E-posta analizi yapan ve hibrit savunma algoritmalarıyla label-flipping veri zehirleme saldırılarını engelleyen federatif yapay zeka sistemi.",
-            category: "ai backend",
-            tech: ["Python", "TensorFlow", "Flower (flwr)", "BiLSTM", "GloVe"],
-            github: "https://github.com/AlihanCelik"
-        },
-        {
-            name: "Depremeli (TEKNOFEST)",
-            desc: "Mobilginers ekibi liderliğiyle geliştirilen deprem anı acil durum iletişimi ve güvenlik uygulaması.",
-            category: "mobile",
-            tech: ["Kotlin", "Coroutines", "Retrofit", "Firebase"],
-            github: "https://github.com/AlihanCelik"
-        },
-        {
-            name: "Noteor (Google Play)",
-            desc: "Parola koruması ve hatırlatıcı sunan, Google Play'de yayınlanmış not alma uygulaması.",
-            category: "mobile",
-            tech: ["Kotlin", "Room Database", "Coroutines"],
-            github: "https://github.com/AlihanCelik"
-        },
-        {
-            name: "Calculation Hub (Google Play)",
-            desc: "Finans, sağlık, birim dönüştürme ve matematiksel hesaplama araçları barındıran Google Play uygulaması.",
-            category: "mobile",
-            tech: ["Kotlin", "Room Database", "Retrofit"],
-            github: "https://github.com/AlihanCelik"
-        }
-    ]
+        roleTitles: [
+            "Bilgisayar Mühendisi"
+        ],
+        email: "alihancelikk03@gmail.com",
+        phone: "0 555 037 66 29",
+        github: "https://github.com/AlihanCelik",
+        linkedin: "https://www.linkedin.com/in/alihan-%C3%A7elik-081616248/",
+        university: "Karadeniz Teknik Üniversitesi - Bilgisayar Mühendisliği (2021-2026)",
+        gpa: "3.45 - Bölüm 4.'sü",
+        bio: "KTÜ Bilgisayar Mühendisliği mezunuyum. Mobil Uygulama Komitesi Başkanlığı yürüttüm. Android (Kotlin), Spring Boot, ASP.NET Core ve Yapay Zeka (BERTurk NLP, Federatif Öğrenme) projeleri geliştiriyorum.",
+        experience: [
+            {
+                company: "Orion Innovation Turkey",
+                role: "Stajyer Mobil Uygulama Geliştirici",
+                period: "Temmuz 2025 – Eylül 2025",
+                tech: ["Kotlin", "Jetpack Compose", "Firebase"]
+            },
+            {
+                company: "ELASOFT",
+                role: "Stajyer Backend Geliştirici",
+                period: "Temmuz 2024 – Ağustos 2024",
+                tech: ["ASP.NET Core", "C#", "Dapper ORM", "Web API"]
+            },
+            {
+                company: "Freelance",
+                role: "Mobil Uygulama Geliştirici",
+                period: "2022 – 2025",
+                tech: ["Kotlin", "Flutter", "Git/GitHub", "Ekip Yönetimi"]
+            }
+        ],
+        projects: [
+            {
+                name: "Duygu Analizli AI Chat (Lisans Bitirme Projesi)",
+                desc: "BERTurk tabanlı NLP modelleriyle mesaj içeriklerinden anlık duygu analizi yapan, mikroservis mimarili anlık mesajlaşma platformu.",
+                category: "mobile ai backend",
+                tech: ["Kotlin (Compose, MVVM, Clean Arch, Hilt, Room)", "Spring Boot", "Python (Flask/FastAPI)", "WebSocket (STOMP)", "RabbitMQ", "PostgreSQL"],
+                github: "https://github.com/AlihanCelik/BitimeProjesi-ChatAPP"
+            },
+            {
+                name: "Federatif Oltalama (Phishing) Tespit Sistemi",
+                desc: "E-posta analizi yapan ve hibrit savunma algoritmalarıyla label-flipping veri zehirleme saldırılarını engelleyen federatif yapay zeka sistemi.",
+                category: "ai backend",
+                tech: ["Python", "TensorFlow", "Flower (flwr)", "BiLSTM", "GloVe"],
+                github: "https://github.com/AlihanCelik/federated-phishing-detection"
+            },
+            {
+                name: "Depremeli (TEKNOFEST)",
+                desc: "Mobilginers ekibi liderliğiyle geliştirilen deprem anı acil durum iletişimi ve güvenlik uygulaması.",
+                category: "mobile",
+                tech: ["Kotlin", "Coroutines", "Retrofit", "Firebase"],
+                github: "https://github.com/AlihanCelik/DepremEli-Teknofest"
+            },
+            {
+                name: "Noteor (Google Play)",
+                desc: "Parola koruması ve hatırlatıcı sunan, Google Play'de yayınlanmış not alma uygulaması.",
+                category: "mobile",
+                tech: ["Kotlin", "Room Database", "Coroutines"],
+                github: "https://github.com/AlihanCelik/NOTEOR"
+            },
+            {
+                name: "Calculation Hub (Google Play)",
+                desc: "Finans, sağlık, birim dönüştürme ve matematiksel hesaplama araçları barındıran Google Play uygulaması.",
+                category: "mobile",
+                tech: ["Kotlin", "Room Database", "Retrofit"],
+                github: "https://github.com/AlihanCelik/CalculationHub"
+            }
+        ]
 };
 
 // --- DOM Content Loaded Initialization ---
@@ -103,7 +103,7 @@ function initTypingEffect() {
 
     function type() {
         const currentRole = USER_DATA.roleTitles[roleIndex];
-        
+
         if (isDeleting && USER_DATA.roleTitles.length > 1) {
             roleElem.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
@@ -393,7 +393,7 @@ function initContactForm() {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        
+
         const name = document.getElementById("form-name").value;
 
         statusDiv.style.color = "var(--accent-cyan)";
