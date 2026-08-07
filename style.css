@@ -516,8 +516,8 @@ body {
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-green), var(--accent-cyan));
     z-index: 1;
     animation: rotateLaserRing 6s linear infinite;
-    mask: radial-gradient(circle, transparent 63px, #000 64px);
-    -webkit-mask: radial-gradient(circle, transparent 63px, #000 64px);
+    mask: radial-gradient(circle, transparent calc(50% - 3px), #000 calc(50% - 2px));
+    -webkit-mask: radial-gradient(circle, transparent calc(50% - 3px), #000 calc(50% - 2px));
 }
 
 @keyframes rotateLaserRing {
@@ -1802,7 +1802,12 @@ body {
     .hero-top-banner {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .avatar-cyber-frame {
+        width: 110px;
+        height: 110px;
     }
 
     .hero-title-group {
@@ -1867,6 +1872,11 @@ body {
 
     .hero-section {
         padding: 7.5rem 0 4rem;
+    }
+
+    .avatar-cyber-frame {
+        width: 90px;
+        height: 90px;
     }
 
     .hero-title {
