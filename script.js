@@ -354,7 +354,7 @@ function toggleMatrixRainState() {
         canvas.style.opacity = "0";
         matrixActive = false;
     } else {
-        canvas.style.opacity = "0.15";
+        canvas.style.opacity = "0.35";
         matrixActive = true;
     }
 }
