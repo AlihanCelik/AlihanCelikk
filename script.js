@@ -326,32 +326,51 @@ function initMatrixRain() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Binary & Cyber Code Streams
-    const binaryStreams = ["10101", "01100", "11001", "00110", "11100", "01010", "10011", "00011", "10110"];
-    const codeTokens = [
-        "Kotlin", "fun", "val", "CleanArch", "Spring", "ASP.NET", "Compose", 
-        "FastAPI", "Python", "Flutter", "Room", "Hilt", "0101", "</>", "{ }", 
-        "class", "import", "return", "GPA:3.45"
+    // Software Engineer Code Snippets & Binary Streams
+    const codeLines = [
+        "fun main() {",
+        "val dev = Alihan",
+        "viewModel.fetch()",
+        "SpringApplication.run()",
+        "FastAPI.predict()",
+        "BERTurk.analyze()",
+        "SELECT * FROM db",
+        "101100101101",
+        "CleanArch.build()",
+        "Compose.render()",
+        "Docker.compose()",
+        "RabbitMQ.send()",
+        "STOMP.connect()",
+        "GPA: 3.45",
+        "KTU.CS.Graduate",
+        "RoomDatabase.query()",
+        "async await", "0100101", "</>", "{ }", "=>", "class Engineer", "override fun"
     ];
 
     const fontSize = 14;
-    const columns = Math.floor(canvas.width / 40);
+    const columns = Math.floor(canvas.width / 50); // Spaced columns for readable falling code lines
     const rainDrops = Array(columns).fill(1);
 
     function draw() {
-        ctx.fillStyle = "rgba(9, 13, 22, 0.12)";
+        ctx.fillStyle = "rgba(3, 7, 18, 0.14)"; // Deep obsidian black trail fade
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Draw Cascading Digital Binary & Code Rain Streams
+        // Draw Cascading Code Streams
         ctx.font = `${fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
         for (let i = 0; i < rainDrops.length; i++) {
-            const isBinary = Math.random() > 0.3;
-            const text = isBinary 
-                ? binaryStreams[Math.floor(Math.random() * binaryStreams.length)]
-                : codeTokens[Math.floor(Math.random() * codeTokens.length)];
+            const text = codeLines[Math.floor(Math.random() * codeLines.length)];
 
-            ctx.fillStyle = (i % 2 === 0) ? "rgba(0, 240, 255, 0.35)" : "rgba(0, 255, 157, 0.35)";
-            ctx.fillText(text, i * 40, rainDrops[i] * fontSize);
+            // Neon Cyan, Neon Emerald, or Electric Violet
+            const colorIndex = i % 3;
+            if (colorIndex === 0) {
+                ctx.fillStyle = "rgba(0, 240, 255, 0.5)";
+            } else if (colorIndex === 1) {
+                ctx.fillStyle = "rgba(0, 255, 157, 0.5)";
+            } else {
+                ctx.fillStyle = "rgba(192, 132, 252, 0.5)";
+            }
+
+            ctx.fillText(text, i * 50, rainDrops[i] * fontSize);
 
             if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                 rainDrops[i] = 0;
@@ -377,7 +396,7 @@ function toggleMatrixRainState() {
         canvas.style.opacity = "0";
         matrixActive = false;
     } else {
-        canvas.style.opacity = "0.55";
+        canvas.style.opacity = "0.65";
         matrixActive = true;
     }
 }

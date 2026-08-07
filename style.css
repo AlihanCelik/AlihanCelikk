@@ -6,12 +6,12 @@
 /* --- CSS Variables & Design Tokens --- */
 :root {
     /* Color Palette */
-    --bg-primary: #090d16;
-    --bg-secondary: #0f172a;
-    --bg-card: rgba(17, 24, 39, 0.7);
-    --bg-card-hover: rgba(30, 41, 59, 0.85);
-    --bg-ide: #0d1117;
-    --bg-ide-header: #161b22;
+    --bg-primary: #030712;
+    --bg-secondary: #0b101d;
+    --bg-card: rgba(8, 14, 26, 0.78);
+    --bg-card-hover: rgba(18, 28, 48, 0.9);
+    --bg-ide: #050a14;
+    --bg-ide-header: #0d1526;
     
     /* Brand Accents */
     --accent-cyan: #00f0ff;
@@ -105,7 +105,7 @@ body {
     height: 100vh;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.55;
+    opacity: 0.65;
     transition: opacity 0.5s ease;
 }
 
