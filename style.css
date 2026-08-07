@@ -421,8 +421,8 @@ body {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 4.5rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2.5rem;
     align-items: center;
 }
 
@@ -430,8 +430,8 @@ body {
 .hero-profile-header {
     display: flex;
     align-items: center;
-    gap: 1.8rem;
-    margin-bottom: 1.8rem;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero-avatar-wrapper {
@@ -539,7 +539,7 @@ body {
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem);
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 0.35rem;
@@ -610,6 +610,8 @@ body {
 /* --- IDE Mockup Component --- */
 .ide-wrapper {
     perspective: 1000px;
+    width: 100%;
+    min-width: 0;
 }
 
 .ide-container {
