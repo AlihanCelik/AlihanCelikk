@@ -413,6 +413,26 @@ body {
     cursor: pointer;
 }
 
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-padding {
+    padding: 6rem 0;
+}
+
+.bg-alt {
+    background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.6) 0%, var(--bg-primary) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header {
+    text-align: center;
+}
+
 /* --- Hero Section --- */
 .hero-section {
     padding: 10.5rem 0 5.5rem;
@@ -430,8 +450,8 @@ body {
 /* --- Hero Content Grid: Left Bio/CTA + Right Full-Size IDE Mockup --- */
 .hero-content-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3rem;
     align-items: flex-start;
 }
 
@@ -717,8 +737,8 @@ body {
 }
 
 .tab-content pre {
-    white-space: pre-wrap;
-    word-break: break-word;
+    white-space: pre;
+    overflow-x: auto;
 }
 
 /* Syntax Colors */
