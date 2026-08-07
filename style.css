@@ -289,7 +289,7 @@ body {
 
 .main-nav {
     display: flex;
-    gap: 1.8rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
@@ -371,7 +371,7 @@ body {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 0.8rem;
@@ -386,7 +386,7 @@ body {
 
 .hero-subtitle {
     font-family: var(--font-code);
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     color: var(--accent-green);
     margin-bottom: 1.2rem;
     min-height: 2.2rem;
@@ -404,7 +404,7 @@ body {
 }
 
 .hero-description {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
     max-width: 540px;
@@ -420,21 +420,21 @@ body {
 
 .quick-stats {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
     border-top: 1px solid var(--border-color);
     padding-top: 1.5rem;
 }
 
 .stat-num {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 800;
     font-family: var(--font-code);
     color: var(--accent-cyan);
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
 }
 
@@ -512,9 +512,9 @@ body {
     color: var(--text-secondary);
 }
 
-.file-icon.ts { color: #3178c6; }
+.file-icon.kt { color: #a97bff; }
 .file-icon.json { color: var(--accent-yellow); }
-.file-icon.py { color: #3572A5; }
+.file-icon.java { color: #f89820; }
 
 .ide-badge {
     font-family: var(--font-code);
@@ -525,7 +525,7 @@ body {
 .ide-body {
     padding: 1.25rem 1.5rem;
     font-family: var(--font-code);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     line-height: 1.6;
     max-height: 380px;
     overflow-y: auto;
@@ -606,6 +606,78 @@ body {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+/* --- Timeline Section --- */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.8rem;
+    position: relative;
+}
+
+.timeline-badge {
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 240, 255, 0.12);
+    border: 1px solid var(--accent-cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.timeline-date {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    margin-bottom: 0.3rem;
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.timeline-company {
+    font-size: 0.95rem;
+    color: var(--accent-cyan);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+}
+
+.timeline-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    color: var(--text-secondary);
 }
 
 /* --- Skills Section --- */
@@ -709,11 +781,24 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-badge {
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 0.72rem;
+    color: var(--accent-green);
+    background: rgba(0, 255, 157, 0.1);
+    border: 1px solid rgba(0, 255, 157, 0.3);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    width: fit-content;
 }
 
 .project-folder {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--accent-cyan);
 }
 
@@ -734,14 +819,14 @@ body {
 }
 
 .project-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     margin-bottom: 0.75rem;
     color: var(--text-primary);
 }
 
 .project-description {
     color: var(--text-secondary);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
     flex-grow: 1;
     line-height: 1.6;
@@ -750,16 +835,59 @@ body {
 .project-tech-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
     font-family: var(--font-code);
     font-size: 0.75rem;
-    color: var(--accent-green);
+    color: var(--accent-cyan);
 }
 
 .project-tech-list span {
-    background: rgba(0, 255, 157, 0.08);
+    background: rgba(0, 240, 255, 0.08);
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
+}
+
+/* --- References --- */
+.reference-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.8rem 2.2rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.ref-avatar {
+    width: 60px;
+    height: 60px;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid var(--accent-purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-purple);
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.ref-info h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.ref-role {
+    color: var(--accent-green);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.ref-contacts {
+    display: flex;
+    gap: 1.5rem;
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
 }
 
 /* --- Terminal Section --- */

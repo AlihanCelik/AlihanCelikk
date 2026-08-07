@@ -1,54 +1,78 @@
 /* ==========================================================================
-   Alihan Çelik - Coder / Software Engineer Interactive Portfolio Script
+   Alihan Çelik - Bilgisayar Mühendisi Interactive Portfolio Script
    ========================================================================== */
 
-// --- CONFIGURABLE USER DATA ---
+// --- AUTHENTIC CV USER DATA ---
 const USER_DATA = {
     name: "Alihan Çelik",
     roleTitles: [
-        "Full-Stack Software Engineer",
-        "Flutter & Mobile Developer",
-        "AI & Backend Architect",
-        "Clean Code Enthusiast"
+        "Bilgisayar Mühendisi",
+        "Android & Mobile Developer (Kotlin/Compose)",
+        "Backend Engineer (Spring Boot, ASP.NET)",
+        "AI & NLP Systems Developer"
     ],
-    email: "alihan.celik@example.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    location: "Turkey 🇹🇷",
-    bio: "Modern web, mobil (Flutter) ve Yapay Zeka entegrasyonlu yazılım çözümleri üreten tutkulu bir mühendis.",
-    skills: {
-        languages: ["Python", "Dart", "JavaScript", "TypeScript", "SQL", "HTML5/CSS3"],
-        frameworks: ["Flutter", "FastAPI", "React", "Flask", "Node.js"],
-        ai_tools: ["OpenAI LLM APIs", "System Control Logic", "Docker", "Git", "Bash"]
-    },
+    email: "alihancelikk03@gmail.com",
+    phone: "0 555 037 66 29",
+    github: "https://github.com/AlihanCelik",
+    linkedin: "https://www.linkedin.com/in/alihan-%C3%A7elik-081616248/",
+    university: "Karadeniz Teknik Üniversitesi - Bilgisayar Mühendisliği (2021-2026)",
+    gpa: "3.45 - Bölüm 4.'sü",
+    bio: "KTÜ Bilgisayar Mühendisliği mezunuyum. Mobil Uygulama Komitesi Başkanlığı yürüttüm. Android (Kotlin), Spring Boot, ASP.NET Core ve Yapay Zeka (BERTurk NLP, Federatif Öğrenme) projeleri geliştiriyorum.",
+    experience: [
+        {
+            company: "Orion Innovation Turkey",
+            role: "Stajyer Mobil Uygulama Geliştirici",
+            period: "Temmuz 2025 – Eylül 2025",
+            tech: ["Kotlin", "Jetpack Compose", "Firebase"]
+        },
+        {
+            company: "ELASOFT",
+            role: "Stajyer Backend Geliştirici",
+            period: "Temmuz 2024 – Ağustos 2024",
+            tech: ["ASP.NET Core", "C#", "Dapper ORM", "Web API"]
+        },
+        {
+            company: "Freelance",
+            role: "Mobil Uygulama Geliştirici",
+            period: "2022 – 2025",
+            tech: ["Kotlin", "Flutter", "Git/GitHub", "Ekip Yönetimi"]
+        }
+    ],
     projects: [
         {
-            name: "Atlas Asistanım",
-            desc: "Python backend sistem kontrolü ve Flutter masaüstü yapay zeka asistanı.",
-            category: "ai mobile",
-            tech: ["Python", "Flutter", "System API"],
-            github: "https://github.com"
+            name: "Duygu Analizli AI Chat (Lisans Bitirme Projesi)",
+            desc: "BERTurk tabanlı NLP modelleriyle mesaj içeriklerinden anlık duygu analizi yapan, mikroservis mimarili anlık mesajlaşma platformu.",
+            category: "mobile ai backend",
+            tech: ["Kotlin", "Spring Boot", "FastAPI", "STOMP", "RabbitMQ", "PostgreSQL"],
+            github: "https://github.com/AlihanCelik"
         },
         {
-            name: "Code Rain & Visualizer",
-            desc: "Matrix efekti ve 60 FPS özel canvas görselleştirici widget motoru.",
-            category: "web ai",
-            tech: ["Dart Canvas", "Custom Painter"],
-            github: "https://github.com"
+            name: "Federatif Oltalama (Phishing) Tespit Sistemi",
+            desc: "E-posta analizi yapan ve hibrit savunma algoritmalarıyla label-flipping veri zehirleme saldırılarını engelleyen federatif yapay zeka sistemi.",
+            category: "ai backend",
+            tech: ["Python", "TensorFlow", "Flower (flwr)", "BiLSTM", "GloVe"],
+            github: "https://github.com/AlihanCelik"
         },
         {
-            name: "Smart Backend Engine",
-            desc: "FastAPI & Flask ile yüksek performanslı veri işleme ve mikro servis mimarisi.",
-            category: "ai",
-            tech: ["Python", "FastAPI", "Docker"],
-            github: "https://github.com"
+            name: "Depremeli (TEKNOFEST)",
+            desc: "Mobilginers ekibi liderliğiyle geliştirilen deprem anı acil durum iletişimi ve güvenlik uygulaması.",
+            category: "mobile",
+            tech: ["Kotlin", "Coroutines", "Retrofit", "Firebase"],
+            github: "https://github.com/AlihanCelik"
         },
         {
-            name: "Coder Portfolio Web App",
-            desc: "IDE simülasyonlu, terminal destekli ve modern siber temalı geliştirici sitesi.",
-            category: "web",
-            tech: ["HTML5", "CSS3", "JavaScript"],
-            github: "https://github.com"
+            name: "Noteor (Google Play)",
+            desc: "Parola koruması ve hatırlatıcı sunan, Google Play'de yayınlanmış not alma uygulaması.",
+            category: "mobile",
+            tech: ["Kotlin", "Room Database", "Coroutines"],
+            github: "https://github.com/AlihanCelik"
+        },
+        {
+            name: "Calculation Hub (Google Play)",
+            desc: "Finans, sağlık, birim dönüştürme ve matematiksel hesaplama araçları barındıran Google Play uygulaması.",
+            category: "mobile",
+            tech: ["Kotlin", "Room Database", "Retrofit"],
+            github: "https://github.com/AlihanCelik"
         }
     ]
 };
@@ -66,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* -------------------------------------------------------------------------- */
-/* 1. Typing Effect for Roles in Hero Section                                 */
+/* 1. Typing Effect for Roles                                                 */
 /* -------------------------------------------------------------------------- */
 function initTypingEffect() {
     const roleElem = document.getElementById("typing-role");
@@ -92,7 +116,7 @@ function initTypingEffect() {
 
         if (!isDeleting && charIndex === currentRole.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Pause at full word
+            typeSpeed = 2000;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             roleIndex = (roleIndex + 1) % USER_DATA.roleTitles.length;
@@ -141,13 +165,9 @@ function initInteractiveTerminal() {
             const command = terminalInput.value.trim().toLowerCase();
             if (command === "") return;
 
-            // Output command prompt line
             appendTerminalLine(`alihan@dev:~$ ${command}`, "output-cmd");
-
-            // Process Command
             processCommand(command);
 
-            // Reset input & scroll to bottom
             terminalInput.value = "";
             terminalBody.scrollTop = terminalBody.scrollHeight;
         }
@@ -164,36 +184,53 @@ function initInteractiveTerminal() {
         switch (cmd) {
             case "help":
                 appendTerminalLine(`
-                    <span style="color: var(--accent-cyan); font-weight: bold;">[Mevcut Komutlar / Available Commands]:</span><br>
-                    • <code class="cmd-highlight">whoami</code> veya <code class="cmd-highlight">about</code>: Biyografi & Hakkımda<br>
-                    • <code class="cmd-highlight">skills</code>: Teknik yetenek ve diller<br>
-                    • <code class="cmd-highlight">projects</code>: Geliştirilen öne çıkan projeler<br>
-                    • <code class="cmd-highlight">contact</code>: İletişim bilgileri ve e-posta<br>
-                    • <code class="cmd-highlight">matrix</code>: Matrix yağmuru efektini aç/kapat<br>
-                    • <code class="cmd-highlight">clear</code>: Terminal ekranını temizle
+                    <span style="color: var(--accent-cyan); font-weight: bold;">[Mevcut Komutlar]:</span><br>
+                    • <code class="cmd-highlight">whoami</code> veya <code class="cmd-highlight">about</code>: Biyografi & KTÜ Derecesi<br>
+                    • <code class="cmd-highlight">experience</code>: İş tecrübeleri (Orion, ELASOFT)<br>
+                    • <code class="cmd-highlight">skills</code>: Teknik yetenekler (Kotlin, Spring Boot, AI)<br>
+                    • <code class="cmd-highlight">projects</code>: Bitirme projesi & Google Play uygulamaları<br>
+                    • <code class="cmd-highlight">gpa</code>: Mezuniyet ortalaması<br>
+                    • <code class="cmd-highlight">contact</code>: İletişim bilgileri & Telefon<br>
+                    • <code class="cmd-highlight">matrix</code>: Matrix efekti aç/kapat<br>
+                    • <code class="cmd-highlight">clear</code>: Ekranı temizle
                 `, "output-info");
                 break;
 
             case "whoami":
             case "about":
                 appendTerminalLine(`
-                    <span style="color: var(--accent-green); font-weight: bold;">User: ${USER_DATA.name}</span><br>
-                    Role: ${USER_DATA.roleTitles[0]}<br>
-                    Location: ${USER_DATA.location}<br>
-                    Bio: ${USER_DATA.bio}
+                    <span style="color: var(--accent-green); font-weight: bold;">${USER_DATA.name}</span> - Bilgisayar Mühendisi<br>
+                    Eğitim: ${USER_DATA.university}<br>
+                    Derece: ${USER_DATA.gpa}<br>
+                    Özet: ${USER_DATA.bio}
+                `, "output-info");
+                break;
+
+            case "experience":
+                let expHTML = `<span style="color: var(--accent-green); font-weight: bold;">İş & Staj Geçmişi:</span><br>`;
+                USER_DATA.experience.forEach(e => {
+                    expHTML += `• <strong>${e.company}</strong> (${e.period}) - ${e.role} [${e.tech.join(", ")}]<br>`;
+                });
+                appendTerminalLine(expHTML, "output-info");
+                break;
+
+            case "gpa":
+                appendTerminalLine(`
+                    🎓 <strong>KTÜ Bilgisayar Mühendisliği</strong><br>
+                    GPA: <span style="color: var(--accent-green); font-weight: bold;">3.45</span> (Bölüm Dördüncüsü)
                 `, "output-info");
                 break;
 
             case "skills":
                 appendTerminalLine(`
-                    <span style="color: var(--accent-cyan);">Diller:</span> ${USER_DATA.skills.languages.join(", ")}<br>
-                    <span style="color: var(--accent-cyan);">Frameworkler:</span> ${USER_DATA.skills.frameworks.join(", ")}<br>
-                    <span style="color: var(--accent-cyan);">Yapay Zeka & Sistemler:</span> ${USER_DATA.skills.ai_tools.join(", ")}
+                    <span style="color: var(--accent-cyan);">Mobil:</span> Kotlin, Java, Jetpack Compose, MVVM/MVI, Flutter, Retrofit, Room<br>
+                    <span style="color: var(--accent-cyan);">Backend:</span> Java Spring Boot, ASP.NET Core/MVC, Python FastAPI/Flask, PostgreSQL, RabbitMQ, WebSocket<br>
+                    <span style="color: var(--accent-cyan);">Yapay Zeka:</span> BERTurk NLP, Duygu Analizi, TensorFlow, Federatif Öğrenme (Flower)
                 `, "output-info");
                 break;
 
             case "projects":
-                let projHTML = `<span style="color: var(--accent-green); font-weight: bold;">Geliştirilen Projeler:</span><br>`;
+                let projHTML = `<span style="color: var(--accent-green); font-weight: bold;">Öne Çıkan Projeler:</span><br>`;
                 USER_DATA.projects.forEach((p, idx) => {
                     projHTML += `${idx + 1}. <strong>${p.name}</strong> - ${p.desc} [<em>${p.tech.join(", ")}</em>]<br>`;
                 });
@@ -203,6 +240,7 @@ function initInteractiveTerminal() {
             case "contact":
                 appendTerminalLine(`
                     E-Posta: <a href="mailto:${USER_DATA.email}" style="color: var(--accent-cyan);">${USER_DATA.email}</a><br>
+                    Telefon: ${USER_DATA.phone}<br>
                     GitHub: <a href="${USER_DATA.github}" target="_blank" style="color: var(--accent-cyan);">${USER_DATA.github}</a><br>
                     LinkedIn: <a href="${USER_DATA.linkedin}" target="_blank" style="color: var(--accent-cyan);">${USER_DATA.linkedin}</a>
                 `, "output-info");
@@ -354,15 +392,13 @@ function initContactForm() {
         e.preventDefault();
         
         const name = document.getElementById("form-name").value;
-        const email = document.getElementById("form-email").value;
-        const message = document.getElementById("form-message").value;
 
         statusDiv.style.color = "var(--accent-cyan)";
-        statusDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> POST /api/contact [Payload: ${name}]...`;
+        statusDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Mesaj gönderiliyor...`;
 
         setTimeout(() => {
             statusDiv.style.color = "var(--accent-green)";
-            statusDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> Mesajınız başarıyla iletildi! En kısa sürede dönüş yapacağım.`;
+            statusDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> Teşekkürler ${name}! Mesajınız alındı.`;
             form.reset();
         }, 1200);
     });
