@@ -1626,6 +1626,8 @@ body {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .contact-item i {
@@ -1638,6 +1640,7 @@ body {
     justify-content: center;
     color: var(--accent-cyan);
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .contact-label {
@@ -1651,12 +1654,15 @@ body {
     border: none;
     color: var(--text-primary);
     font-family: var(--font-code);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     transition: var(--transition-fast);
+    word-break: break-all;
+    max-width: 100%;
+    text-align: left;
 }
 
 .copy-email-btn:hover {
@@ -1928,13 +1934,25 @@ body {
     }
 
     .contact-wrapper {
-        padding: 1.5rem;
+        padding: 1.25rem;
+        gap: 2rem;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .contact-info h3 {
+        font-size: 1.35rem;
+    }
+
+    .copy-email-btn {
+        font-size: 0.82rem;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 1rem;
+        padding: 0 0.85rem;
     }
 
     .hero-title {
@@ -1964,6 +1982,31 @@ body {
     .avatar-cyber-frame {
         width: 110px;
         height: 110px;
+    }
+
+    .contact-wrapper {
+        padding: 1rem 0.85rem;
+        border-radius: 12px;
+    }
+
+    .contact-item {
+        gap: 0.75rem;
+    }
+
+    .contact-item i {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .copy-email-btn {
+        font-size: 0.76rem;
+        word-break: break-all;
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 0.75rem;
+        font-size: 0.88rem;
     }
 }
 
