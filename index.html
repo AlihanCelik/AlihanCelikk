@@ -28,31 +28,37 @@
     <!-- Background Canvas for Matrix Rain Effect -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Header Navigation -->
-    <header class="site-header">
+    <!-- Cyber Glassmorphic Header Navigation -->
+    <header class="site-header" id="site-header">
         <div class="nav-container">
             <a href="#hero" class="brand-logo">
-                <span class="code-bracket">&lt;</span><span class="brand-name">alihancelik.dev</span><span class="code-bracket"> /&gt;</span>
+                <div class="logo-icon-badge"><i class="fa-solid fa-code"></i></div>
+                <div class="logo-text">
+                    <span class="code-bracket">&lt;</span><span class="brand-name">alihancelik.dev</span><span class="code-bracket">/&gt;</span>
+                </div>
             </a>
             
             <div class="status-badge" id="availability-status">
                 <span class="pulse-dot"></span>
-                <span class="status-text">Geliştirmeye Açık / Open for Mobile & Backend Projects</span>
+                <span class="status-text"><i class="fa-solid fa-circle-check"></i> Projelere Açık (Mobile & Backend)</span>
             </div>
 
             <nav class="main-nav" id="main-nav">
-                <a href="#about" class="nav-link"><span class="nav-num">01.</span> ~/hakkimda</a>
-                <a href="#experience" class="nav-link"><span class="nav-num">02.</span> ~/deneyim</a>
-                <a href="#skills" class="nav-link"><span class="nav-num">03.</span> ~/yetenekler</a>
-                <a href="#projects" class="nav-link"><span class="nav-num">04.</span> ~/projeler</a>
-                <a href="#terminal-section" class="nav-link"><span class="nav-num">05.</span> ~/terminal</a>
-                <a href="#contact" class="nav-link"><span class="nav-num">06.</span> ~/iletisim</a>
+                <a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> Hakkımda</a>
+                <a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Deneyim</a>
+                <a href="#skills" class="nav-link"><i class="fa-solid fa-layer-group"></i> Yetenekler</a>
+                <a href="#projects" class="nav-link"><i class="fa-solid fa-folder-open"></i> Projeler</a>
+                <a href="#terminal-section" class="nav-link"><i class="fa-solid fa-terminal"></i> Terminal</a>
+                <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> İletişim</a>
             </nav>
 
             <div class="header-controls">
-                <button class="icon-btn" id="toggle-matrix-btn" title="Matrix Yağmuru Efekti">
-                    <i class="fa-solid fa-code"></i>
-                </button>
+                <a href="https://github.com/AlihanCelik" target="_blank" class="header-social-link" title="GitHub Profilim">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alihan-%C3%A7elik-081616248/" target="_blank" class="header-social-link" title="LinkedIn Profilim">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
                 <button class="mobile-toggle" id="mobile-toggle" aria-label="Menüyü Aç/Kapat">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>

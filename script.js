@@ -86,7 +86,21 @@ document.addEventListener("DOMContentLoaded", () => {
     initCopyEmail();
     initContactForm();
     initMobileNav();
+    initScrollHeader();
 });
+
+function initScrollHeader() {
+    const header = document.getElementById("site-header");
+    if (!header) return;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
+}
 
 /* -------------------------------------------------------------------------- */
 /* 1. Typing Effect for Roles                                                 */
