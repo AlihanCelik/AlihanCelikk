@@ -544,6 +544,7 @@ body {
     line-height: 1.2;
     margin-bottom: 0.35rem;
     letter-spacing: -0.8px;
+    white-space: nowrap;
 }
 
 .highlight-gradient {
