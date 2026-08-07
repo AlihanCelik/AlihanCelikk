@@ -338,43 +338,11 @@ function initMatrixRain() {
     const columns = Math.floor(canvas.width / 40);
     const rainDrops = Array(columns).fill(1);
 
-    // -------------------------------------------------------------------------
-    // 3D Holographic Rotating Binary (1 & 0) Globe & Mesh Engine
-    // -------------------------------------------------------------------------
-    const binaryNodes = [];
-    const nodeCount = 220; // High density for vivid hacker globe
-    const sphereRadius = Math.min(window.innerWidth, window.innerHeight) * 0.42;
-
-    for (let i = 0; i < nodeCount; i++) {
-        // Fibonacci sphere distribution for uniform 3D globe layout
-        const phi = Math.acos(1 - 2 * (i + 0.5) / nodeCount);
-        const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-
-        binaryNodes.push({
-            x: sphereRadius * Math.sin(phi) * Math.cos(theta),
-            y: sphereRadius * Math.cos(phi),
-            z: sphereRadius * Math.sin(phi) * Math.sin(theta),
-            val: Math.random() > 0.45 ? "1" : "0",
-            color: Math.random() > 0.4 ? "#00f0ff" : (Math.random() > 0.5 ? "#00ff9d" : "#a855f7")
-        });
-    }
-
-    let angleX = 0;
-    let angleY = 0;
-    let targetAngleX = 0;
-    let targetAngleY = 0;
-
-    // Mouse tilt parallax interaction
-    document.addEventListener("mousemove", (e) => {
-        targetAngleY = (e.clientX / window.innerWidth - 0.5) * 0.8;
-        targetAngleX = (e.clientY / window.innerHeight - 0.5) * 0.8;
-    });
-
     function draw() {
-        ctx.fillStyle = "rgba(9, 13, 22, 0.14)";
+        ctx.fillStyle = "rgba(9, 13, 22, 0.12)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // 1. Draw Cascading Binary Code Streams
+        // Draw Cascading Digital Binary & Code Rain Streams
         ctx.font = `${fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
         for (let i = 0; i < rainDrops.length; i++) {
             const isBinary = Math.random() > 0.3;
@@ -390,71 +358,6 @@ function initMatrixRain() {
             }
             rainDrops[i]++;
         }
-
-        // 2. Draw 3D Rotating Binary (1 & 0) Globe & Holographic Mesh
-        angleY += (targetAngleY * 0.05 + 0.005);
-        angleX += (targetAngleX * 0.05 + 0.003);
-
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const focalLength = 450;
-
-        const cosY = Math.cos(angleY), sinY = Math.sin(angleY);
-        const cosX = Math.cos(angleX), sinX = Math.sin(angleX);
-
-        const projected = [];
-
-        binaryNodes.forEach(p => {
-            // Y rotation
-            let x1 = p.x * cosY - p.z * sinY;
-            let z1 = p.z * cosY + p.x * sinY;
-
-            // X rotation
-            let y1 = p.y * cosX - z1 * sinX;
-            let z2 = z1 * cosX + p.y * sinX;
-
-            const scale = focalLength / (focalLength + z2 + 350);
-            const projX = centerX + x1 * scale;
-            const projY = centerY + y1 * scale;
-
-            projected.push({ projX, projY, scale, val: p.val, color: p.color, z: z2 });
-        });
-
-        // Sort by Z for proper 3D depth rendering
-        projected.sort((a, b) => a.z - b.z);
-
-        // Draw 3D Mesh Connections between nearby 1s and 0s
-        ctx.lineWidth = 0.5;
-        for (let i = 0; i < projected.length; i += 3) {
-            for (let j = i + 1; j < projected.length; j += 4) {
-                const dx = projected[i].projX - projected[j].projX;
-                const dy = projected[i].projY - projected[j].projY;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < 75 && projected[i].scale > 0.6) {
-                    ctx.strokeStyle = `rgba(0, 240, 255, ${0.15 * (1 - dist / 75)})`;
-                    ctx.beginPath();
-                    ctx.moveTo(projected[i].projX, projected[i].projY);
-                    ctx.lineTo(projected[j].projX, projected[j].projY);
-                    ctx.stroke();
-                }
-            }
-        }
-
-        // Render glowing 1s and 0s
-        projected.forEach(p => {
-            if (p.scale > 0) {
-                const particleSize = Math.max(10, Math.floor(22 * p.scale));
-                ctx.font = `bold ${particleSize}px 'JetBrains Mono', monospace`;
-                ctx.fillStyle = p.color;
-                ctx.globalAlpha = Math.min(1, Math.max(0.15, p.scale * 1.1));
-                ctx.shadowBlur = p.scale > 0.8 ? 12 : 0;
-                ctx.shadowColor = p.color;
-                ctx.fillText(p.val, p.projX, p.projY);
-                ctx.shadowBlur = 0;
-                ctx.globalAlpha = 1.0;
-            }
-        });
     }
 
     matrixInterval = setInterval(draw, 35);
