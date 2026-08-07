@@ -6,11 +6,9 @@
 const USER_DATA = {
     name: "Alihan Çelik",
     roleTitles: [
-        "Bilgisayar Mühendisi",
-        roleTitles: [
-            "Bilgisayar Mühendisi"
-        ],
-        email: "alihancelikk03@gmail.com",
+        "Bilgisayar Mühendisi"
+    ],
+    email: "alihancelikk03@gmail.com",
         phone: "0 555 037 66 29",
         github: "https://github.com/AlihanCelik",
         linkedin: "https://www.linkedin.com/in/alihan-%C3%A7elik-081616248/",
