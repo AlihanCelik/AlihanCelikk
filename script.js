@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initIdeTabs();
     initInteractiveTerminal();
     initProjectFilters();
+    initTimelineFilters();
     initMatrixRain();
     initCopyEmail();
     initContactForm();
@@ -423,3 +424,31 @@ function initMobileNav() {
         });
     });
 }
+
+/* -------------------------------------------------------------------------- */
+/* 9. Timeline Roadmap Filter                                                 */
+/* -------------------------------------------------------------------------- */
+function initTimelineFilters() {
+    const tfilterBtns = document.querySelectorAll(".timeline-filter-btn");
+    const roadmapCards = document.querySelectorAll(".roadmap-card");
+
+    tfilterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tfilterBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filterValue = btn.getAttribute("data-tfilter");
+
+            roadmapCards.forEach(card => {
+                const category = card.getAttribute("data-tcat");
+                if (filterValue === "all" || category === filterValue) {
+                    card.style.display = "flex";
+                    card.style.animation = "fadeIn 0.4s ease forwards";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+}
+
