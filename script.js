@@ -326,61 +326,64 @@ function initMatrixRain() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Programming Languages & Cyber Code Tokens
+    // Binary & Cyber Code Streams
+    const binaryStreams = ["10101", "01100", "11001", "00110", "11100", "01010", "10011", "00011", "10110"];
     const codeTokens = [
         "Kotlin", "fun", "val", "CleanArch", "Spring", "ASP.NET", "Compose", 
-        "FastAPI", "Python", "Flutter", "Room", "Hilt", "STOMP", "RabbitMQ", 
-        "Postgres", "Docker", "async", "await", "0101", "</>", "{ }", "=>", 
-        "class", "import", "return", "GPA:3.45", "Retrofit", "Coroutines"
+        "FastAPI", "Python", "Flutter", "Room", "Hilt", "0101", "</>", "{ }", 
+        "class", "import", "return", "GPA:3.45"
     ];
 
-    const katakana = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
-    const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</>{}[]=+#$";
-    const alphabet = katakana + latin;
-
-    const fontSize = 15;
-    const columns = Math.floor(canvas.width / 45); // Spaced out for readable code words
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / 40);
     const rainDrops = Array(columns).fill(1);
 
     // -------------------------------------------------------------------------
-    // 3D Rotating Binary (1 & 0) Ring System
+    // 3D Holographic Rotating Binary (1 & 0) Globe & Mesh Engine
     // -------------------------------------------------------------------------
-    const binaryParticles = [];
-    const particleCount = 120;
-    const ringRadius = Math.min(window.innerWidth, window.innerHeight) * 0.38;
+    const binaryNodes = [];
+    const nodeCount = 220; // High density for vivid hacker globe
+    const sphereRadius = Math.min(window.innerWidth, window.innerHeight) * 0.42;
 
-    for (let i = 0; i < particleCount; i++) {
-        // Distribute on 3D rings
-        const theta = (i / particleCount) * Math.PI * 2 * 3; // 3 turns spiral/ring
-        const phi = (i / particleCount) * Math.PI - Math.PI / 2;
-        const radius = ringRadius + (Math.random() - 0.5) * 80;
+    for (let i = 0; i < nodeCount; i++) {
+        // Fibonacci sphere distribution for uniform 3D globe layout
+        const phi = Math.acos(1 - 2 * (i + 0.5) / nodeCount);
+        const theta = Math.PI * (1 + Math.sqrt(5)) * i;
 
-        binaryParticles.push({
-            x: radius * Math.cos(theta) * Math.cos(phi),
-            y: radius * Math.sin(phi),
-            z: radius * Math.sin(theta) * Math.cos(phi),
-            val: Math.random() > 0.5 ? "1" : "0",
-            color: Math.random() > 0.5 ? "#00f0ff" : "#a855f7"
+        binaryNodes.push({
+            x: sphereRadius * Math.sin(phi) * Math.cos(theta),
+            y: sphereRadius * Math.cos(phi),
+            z: sphereRadius * Math.sin(phi) * Math.sin(theta),
+            val: Math.random() > 0.45 ? "1" : "0",
+            color: Math.random() > 0.4 ? "#00f0ff" : (Math.random() > 0.5 ? "#00ff9d" : "#a855f7")
         });
     }
 
     let angleX = 0;
     let angleY = 0;
+    let targetAngleX = 0;
+    let targetAngleY = 0;
+
+    // Mouse tilt parallax interaction
+    document.addEventListener("mousemove", (e) => {
+        targetAngleY = (e.clientX / window.innerWidth - 0.5) * 0.8;
+        targetAngleX = (e.clientY / window.innerHeight - 0.5) * 0.8;
+    });
 
     function draw() {
-        ctx.fillStyle = "rgba(9, 13, 22, 0.12)";
+        ctx.fillStyle = "rgba(9, 13, 22, 0.14)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // 1. Draw Falling Code Rain
+        // 1. Draw Cascading Binary Code Streams
         ctx.font = `${fontSize}px 'JetBrains Mono', 'Fira Code', monospace`;
         for (let i = 0; i < rainDrops.length; i++) {
-            const isCodeWord = Math.random() > 0.4;
-            const text = isCodeWord 
-                ? codeTokens[Math.floor(Math.random() * codeTokens.length)]
-                : alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+            const isBinary = Math.random() > 0.3;
+            const text = isBinary 
+                ? binaryStreams[Math.floor(Math.random() * binaryStreams.length)]
+                : codeTokens[Math.floor(Math.random() * codeTokens.length)];
 
-            ctx.fillStyle = (i % 2 === 0) ? "rgba(0, 240, 255, 0.45)" : "rgba(0, 255, 157, 0.45)";
-            ctx.fillText(text, i * 45, rainDrops[i] * fontSize);
+            ctx.fillStyle = (i % 2 === 0) ? "rgba(0, 240, 255, 0.35)" : "rgba(0, 255, 157, 0.35)";
+            ctx.fillText(text, i * 40, rainDrops[i] * fontSize);
 
             if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                 rainDrops[i] = 0;
@@ -388,18 +391,20 @@ function initMatrixRain() {
             rainDrops[i]++;
         }
 
-        // 2. Draw 3D Rotating Binary (1 & 0) Ring System
-        angleY += 0.006;
-        angleX += 0.003;
+        // 2. Draw 3D Rotating Binary (1 & 0) Globe & Holographic Mesh
+        angleY += (targetAngleY * 0.05 + 0.005);
+        angleX += (targetAngleX * 0.05 + 0.003);
 
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
-        const focalLength = 400;
+        const focalLength = 450;
 
         const cosY = Math.cos(angleY), sinY = Math.sin(angleY);
         const cosX = Math.cos(angleX), sinX = Math.sin(angleX);
 
-        binaryParticles.forEach(p => {
+        const projected = [];
+
+        binaryNodes.forEach(p => {
             // Y rotation
             let x1 = p.x * cosY - p.z * sinY;
             let z1 = p.z * cosY + p.x * sinY;
@@ -408,16 +413,45 @@ function initMatrixRain() {
             let y1 = p.y * cosX - z1 * sinX;
             let z2 = z1 * cosX + p.y * sinX;
 
-            const scale = focalLength / (focalLength + z2 + 300);
+            const scale = focalLength / (focalLength + z2 + 350);
             const projX = centerX + x1 * scale;
             const projY = centerY + y1 * scale;
 
-            if (scale > 0) {
-                const particleSize = Math.max(10, Math.floor(18 * scale));
+            projected.push({ projX, projY, scale, val: p.val, color: p.color, z: z2 });
+        });
+
+        // Sort by Z for proper 3D depth rendering
+        projected.sort((a, b) => a.z - b.z);
+
+        // Draw 3D Mesh Connections between nearby 1s and 0s
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < projected.length; i += 3) {
+            for (let j = i + 1; j < projected.length; j += 4) {
+                const dx = projected[i].projX - projected[j].projX;
+                const dy = projected[i].projY - projected[j].projY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 75 && projected[i].scale > 0.6) {
+                    ctx.strokeStyle = `rgba(0, 240, 255, ${0.15 * (1 - dist / 75)})`;
+                    ctx.beginPath();
+                    ctx.moveTo(projected[i].projX, projected[i].projY);
+                    ctx.lineTo(projected[j].projX, projected[j].projY);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Render glowing 1s and 0s
+        projected.forEach(p => {
+            if (p.scale > 0) {
+                const particleSize = Math.max(10, Math.floor(22 * p.scale));
                 ctx.font = `bold ${particleSize}px 'JetBrains Mono', monospace`;
                 ctx.fillStyle = p.color;
-                ctx.globalAlpha = Math.min(1, Math.max(0.2, scale * 0.9));
-                ctx.fillText(p.val, projX, projY);
+                ctx.globalAlpha = Math.min(1, Math.max(0.15, p.scale * 1.1));
+                ctx.shadowBlur = p.scale > 0.8 ? 12 : 0;
+                ctx.shadowColor = p.color;
+                ctx.fillText(p.val, p.projX, p.projY);
+                ctx.shadowBlur = 0;
                 ctx.globalAlpha = 1.0;
             }
         });
@@ -440,7 +474,7 @@ function toggleMatrixRainState() {
         canvas.style.opacity = "0";
         matrixActive = false;
     } else {
-        canvas.style.opacity = "0.35";
+        canvas.style.opacity = "0.55";
         matrixActive = true;
     }
 }
