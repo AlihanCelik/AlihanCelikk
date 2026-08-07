@@ -7,9 +7,8 @@ const USER_DATA = {
     name: "Alihan Çelik",
     roleTitles: [
         "Bilgisayar Mühendisi",
-        "Android & Mobile Developer (Kotlin/Compose)",
-        "Backend Engineer (Spring Boot, ASP.NET)",
-        "AI & NLP Systems Developer"
+    roleTitles: [
+        "Bilgisayar Mühendisi"
     ],
     email: "alihancelikk03@gmail.com",
     phone: "0 555 037 66 29",
@@ -105,7 +104,7 @@ function initTypingEffect() {
     function type() {
         const currentRole = USER_DATA.roleTitles[roleIndex];
         
-        if (isDeleting) {
+        if (isDeleting && USER_DATA.roleTitles.length > 1) {
             roleElem.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
             typeSpeed = 40;
@@ -116,6 +115,9 @@ function initTypingEffect() {
         }
 
         if (!isDeleting && charIndex === currentRole.length) {
+            if (USER_DATA.roleTitles.length === 1) {
+                return; // Stay statically typed on "Bilgisayar Mühendisi"
+            }
             isDeleting = true;
             typeSpeed = 2000;
         } else if (isDeleting && charIndex === 0) {
